@@ -23,3 +23,31 @@ html, body{
 .cartas-menu button{
     margin: 0 .25rem;
 }
+
+
+.carrusel{
+    overflow: hidden;
+    width: 100%;
+}
+
+.wrap {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 250px;
+    justify-items: stretch;
+    animation: slide 15s linear infinite;
+}
+
+.wrap img{
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    object-fit: cover;
+
+}
+
+@keyframes slide{
+    to{
+        translate: calc(-4 *250px);
+    }
+}

@@ -3,7 +3,7 @@ import rigo from "../../img/rigo-baby.jpg"
 
 export const Card = () => {
     return (
-        <div className="container my-5">
+        <div className="container my-5 py-5">
             <h4 className="text-uppercase text-center p-3">
                 Ultimas Tendencias
             </h4>
