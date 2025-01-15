@@ -1,4 +1,5 @@
 import React from "react";
+import { shopAll } from "../pages/shopAll";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
@@ -10,21 +11,21 @@ export const Navbar = () => {
 					<span className="navbar-toggler-icon"></span>
 				</button>
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
-					
+
 					<div className="col-md-6 offset-md-2 p-1">
 						<form className="d-flex" role="search">
 							<input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
 							<button className="btn btn-outline-success" type="submit">Search</button>
 						</form>
 					</div>
-					
+
 					<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 						<li className="nav-item dropdown">
 							<a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								CATEGORIA
 							</a>
 							<ul className="dropdown-menu">
-								<li><a className="dropdown-item" href="#">CATEROGIA 1</a></li>
+								<li><a className="dropdown-item" href="#">Shop All</a></li>
 								<li><a className="dropdown-item" href="#">CATEGORIA 2</a></li>
 							</ul>
 						</li>
