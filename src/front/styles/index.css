@@ -4,3 +4,8 @@ html, body{
     /*font-family: "Darker Grotesque", serif;*/
     font-family: "Dosis", serif;
 }
+
+.bi-facebook,.bi-instagram,.bi-twitter-x,.bi-youtube{
+    padding: 10px;
+    font-size: 20px;
+}
