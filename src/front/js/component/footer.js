@@ -22,10 +22,10 @@ export const Footer = () => (
 				<div className="col px-3 py-2">
 					<h5 className="text-uppercase text-primary">contactanos</h5>
 					<p>
-						<i class="bi bi-envelope"></i> test@test.com
+						<i className="bi bi-envelope"></i> test@test.com
 					</p>
 					<p>
-						<i class="bi bi-telephone"></i> +34 000 00 00
+						<i className="bi bi-telephone"></i> +34 000 00 00
 					</p>
 				</div>
 			</div>
@@ -36,9 +36,9 @@ export const Footer = () => (
 		<p>
 			Copyright Todos los Derechos Reservados
 		</p>
-		<i class="bi bi-facebook"></i>
-		<i class="bi bi-instagram"></i>
-		<i class="bi bi-twitter-x"></i>
-		<i class="bi bi-youtube"></i>
+		<i className="bi bi-facebook"></i>
+		<i className="bi bi-instagram"></i>
+		<i className="bi bi-twitter-x"></i>
+		<i className="bi bi-youtube"></i>
 	</footer>
 );

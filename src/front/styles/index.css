@@ -5,7 +5,21 @@ html, body{
     font-family: "Dosis", serif;
 }
 
-.bi-facebook,.bi-instagram,.bi-twitter-x,.bi-youtube{
+.jumbo img{
+    width: 100vw;
+    height: 30rem;
+}
+
+.footer i{
     padding: 10px;
     font-size: 20px;
+}
+
+.card{
+    width: 18rem;
+    margin: 40px auto;
+    
+}
+.cartas-menu button{
+    margin: 0 .25rem;
 }
