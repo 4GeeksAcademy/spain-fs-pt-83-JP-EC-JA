@@ -28,7 +28,7 @@ export const Card = () => {
             <div className="tab-content text-center cartas-menu" id="myTabContent">
                 <div className="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                     <div className="row justify-content-center">
-                        <div class="card">
+                        <div class="card shadow">
                             <img src={rigo} class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -41,7 +41,7 @@ export const Card = () => {
                                 </button>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card shadow">
                             <img src={rigo} class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -54,7 +54,7 @@ export const Card = () => {
                                 </button>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card shadow">
                             <img src={rigo} class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -72,7 +72,7 @@ export const Card = () => {
                 </div>
                 <div className="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                     <div className="row justify-content-center">
-                        <div class="card">
+                        <div class="card shadow">
                             <img src={rigo} class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -85,7 +85,7 @@ export const Card = () => {
                                 </button>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card shadow">
                             <img src={rigo} class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -98,7 +98,7 @@ export const Card = () => {
                                 </button>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card shadow">
                             <img src={rigo} class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -116,7 +116,7 @@ export const Card = () => {
                 </div>
                 <div className="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
                     <div className="row justify-content-center">
-                        <div class="card">
+                        <div class="card shadow">
                             <img src={rigo} class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -129,7 +129,7 @@ export const Card = () => {
                                 </button>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card shadow">
                             <img src={rigo} class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -142,7 +142,7 @@ export const Card = () => {
                                 </button>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card shadow">
                             <img src={rigo} class="card-img-top" alt="..." />
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
