@@ -25,8 +25,8 @@ export const Navbar = () => {
 								CATEGORIA
 							</a>
 							<ul className="dropdown-menu">
-								<li><a className="dropdown-item" href="#">Shop All</a></li>
-								<li><a className="dropdown-item" href="#">CATEGORIA 2</a></li>
+								<li><a className="dropdown-item" href='#'>Home</a></li>
+								<li><Link className="dropdown-item" to='/ShopAll'>Shop All</Link></li>
 							</ul>
 						</li>
 						<li className="nav-item">
