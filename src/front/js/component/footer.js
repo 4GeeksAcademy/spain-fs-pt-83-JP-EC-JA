@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 export const Footer = () => (
-	<footer className="footer mt-5 text-center">
+	<footer className="footer my-4 text-center border-2 border-top border-info pt-3">
 
 		<div className="container-fluid">
 			<div className="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3">
@@ -32,7 +32,7 @@ export const Footer = () => (
 		</div>
 
 
-		<hr></hr>
+		<hr className="border-2 border-info"></hr>
 		<p>
 			Copyright Todos los Derechos Reservados
 		</p>
