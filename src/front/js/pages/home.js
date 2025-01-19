@@ -7,7 +7,8 @@ import { Carrusel } from "../component/Carrusel";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
-
+	console.log(store)
+	
 	return (
 		<>
 			<Jumbotrom />

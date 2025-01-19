@@ -35,19 +35,20 @@ html, body{
     grid-auto-flow: column;
     grid-auto-columns: 250px;
     justify-items: stretch;
-    animation: slide 15s linear infinite;
+    animation: slide 25s linear infinite;
 }
 
 .wrap img{
     width: 200px;
     height: 200px;
-    border-radius: 15px;
-    object-fit: cover;
+    border-radius: 5px;
+    object-fit: contain;
+    
 
 }
 
 @keyframes slide{
     to{
-        translate: calc(-4 *250px);
+        translate: calc(-15 *250px);
     }
 }

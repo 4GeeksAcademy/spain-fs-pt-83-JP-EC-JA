@@ -28,42 +28,42 @@ export const Card = () => {
             <div className="tab-content text-center cartas-menu" id="myTabContent">
                 <div className="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                     <div className="row justify-content-center">
-                        <div class="card shadow">
-                            <img src={rigo} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div className="card shadow">
+                            <img src={rigo} className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <button className="btn btn-outline-danger rounded rounded-1">
-                                    <i class="bi bi-heart"></i>
+                                    <i className="bi bi-heart"></i>
                                 </button>
                                 <button className="btn btn-outline-success rounded rounded-1">
-                                    <i class="bi bi-cart3"></i>
+                                    <i className="bi bi-cart3"></i>
                                 </button>
                             </div>
                         </div>
-                        <div class="card shadow">
-                            <img src={rigo} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div className="card shadow">
+                            <img src={rigo} className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <button className="btn btn-outline-danger rounded rounded-1">
-                                    <i class="bi bi-heart"></i>
+                                    <i className="bi bi-heart"></i>
                                 </button>
                                 <button className="btn btn-outline-success rounded rounded-1">
-                                    <i class="bi bi-cart3"></i>
+                                    <i className="bi bi-cart3"></i>
                                 </button>
                             </div>
                         </div>
-                        <div class="card shadow">
-                            <img src={rigo} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div className="card shadow">
+                            <img src={rigo} className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <button className="btn btn-outline-danger rounded rounded-1">
-                                    <i class="bi bi-heart"></i>
+                                    <i className="bi bi-heart"></i>
                                 </button>
                                 <button className="btn btn-outline-success rounded rounded-1">
-                                    <i class="bi bi-cart3"></i>
+                                    <i className="bi bi-cart3"></i>
                                 </button>
                             </div>
                         </div>
@@ -72,42 +72,42 @@ export const Card = () => {
                 </div>
                 <div className="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                     <div className="row justify-content-center">
-                        <div class="card shadow">
-                            <img src={rigo} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div className="card shadow">
+                            <img src={rigo} className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <button className="btn btn-outline-danger rounded rounded-1">
-                                    <i class="bi bi-heart"></i>
+                                    <i className="bi bi-heart"></i>
                                 </button>
                                 <button className="btn btn-outline-success rounded rounded-1">
-                                    <i class="bi bi-cart3"></i>
+                                    <i className="bi bi-cart3"></i>
                                 </button>
                             </div>
                         </div>
-                        <div class="card shadow">
-                            <img src={rigo} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div className="card shadow">
+                            <img src={rigo} className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <button className="btn btn-outline-danger rounded rounded-1">
-                                    <i class="bi bi-heart"></i>
+                                    <i className="bi bi-heart"></i>
                                 </button>
                                 <button className="btn btn-outline-success rounded rounded-1">
-                                    <i class="bi bi-cart3"></i>
+                                    <i className="bi bi-cart3"></i>
                                 </button>
                             </div>
                         </div>
-                        <div class="card shadow">
-                            <img src={rigo} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div className="card shadow">
+                            <img src={rigo} className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <button className="btn btn-outline-danger rounded rounded-1">
-                                    <i class="bi bi-heart"></i>
+                                    <i className="bi bi-heart"></i>
                                 </button>
                                 <button className="btn btn-outline-success rounded rounded-1">
-                                    <i class="bi bi-cart3"></i>
+                                    <i className="bi bi-cart3"></i>
                                 </button>
                             </div>
                         </div>
@@ -116,42 +116,42 @@ export const Card = () => {
                 </div>
                 <div className="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
                     <div className="row justify-content-center">
-                        <div class="card shadow">
-                            <img src={rigo} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div className="card shadow">
+                            <img src={rigo} className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <button className="btn btn-outline-danger rounded rounded-1">
-                                    <i class="bi bi-heart"></i>
+                                    <i className="bi bi-heart"></i>
                                 </button>
                                 <button className="btn btn-outline-success rounded rounded-1">
-                                    <i class="bi bi-cart3"></i>
+                                    <i className="bi bi-cart3"></i>
                                 </button>
                             </div>
                         </div>
-                        <div class="card shadow">
-                            <img src={rigo} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div className="card shadow">
+                            <img src={rigo} className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <button className="btn btn-outline-danger rounded rounded-1">
-                                    <i class="bi bi-heart"></i>
+                                    <i className="bi bi-heart"></i>
                                 </button>
                                 <button className="btn btn-outline-success rounded rounded-1">
-                                    <i class="bi bi-cart3"></i>
+                                    <i className="bi bi-cart3"></i>
                                 </button>
                             </div>
                         </div>
-                        <div class="card shadow">
-                            <img src={rigo} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div className="card shadow">
+                            <img src={rigo} className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <button className="btn btn-outline-danger rounded rounded-1">
-                                    <i class="bi bi-heart"></i>
+                                    <i className="bi bi-heart"></i>
                                 </button>
                                 <button className="btn btn-outline-success rounded rounded-1">
-                                    <i class="bi bi-cart3"></i>
+                                    <i className="bi bi-cart3"></i>
                                 </button>
                             </div>
                         </div>

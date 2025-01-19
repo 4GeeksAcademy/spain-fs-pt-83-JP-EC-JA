@@ -1,24 +1,20 @@
-import React from "react";
-import joya from "../../img/joya1.jpg"
-
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 
 
 export const Carrusel = () => {
+    const { store, actions } = useContext(Context);
+
+
     return (
         <div className="container my-5">
             <div className="carrusel">
-                <div className="wrap ">
-                    <img src={joya} alt="joyas" />
-                    <img src={joya} alt="joyas" />
-                    <img src={joya} alt="joyas" />
-                    <img src={joya} alt="joyas" />
-                    <img src={joya} alt="joyas" />
-                    <img src={joya} alt="joyas" />
-                    <img src={joya} alt="joyas" />
-                    <img src={joya} alt="joyas" />
-                    <img src={joya} alt="joyas" />
-                    <img src={joya} alt="joyas" />
-                    <img src={joya} alt="joyas" />
+                <div className="wrap">
+                    {
+                        store.products.map(product => (
+                            <img key={product.id} src={product.image} alt="Imagen de los prductos" />
+                        ))
+                    }
                 </div>
             </div>
 
