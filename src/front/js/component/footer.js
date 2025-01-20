@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 export const Footer = () => (
 	<footer className="footer my-4 text-center border-2 border-top border-info-subtle pt-3">
