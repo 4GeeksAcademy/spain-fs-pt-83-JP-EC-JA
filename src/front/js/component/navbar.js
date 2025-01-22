@@ -27,6 +27,10 @@ export const Navbar = () => {
 							<ul className="dropdown-menu">
 								<li><Link className="dropdown-item" to='/'>Home</Link></li>
 								<li><Link className="dropdown-item" to='/shopAll'>Shop All</Link></li>
+								<li><Link className="dropdown-item" to='/jewelry'>Jewelry</Link></li>
+								<li><Link className="dropdown-item" to='/menclothes'>Men's Clothes</Link></li>
+								<li><Link className="dropdown-item" to='/womanclothes'>Woman's Clothes</Link></li>
+								<li><Link className="dropdown-item" to='/electronics'>Electronics</Link></li>
 							</ul>
 						</li>
 						<li className="nav-item">
