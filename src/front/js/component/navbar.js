@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-expand-lg bg-body-tertiary">
+		<nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary shadow">
 			<div className="container-fluid">
-				<a className="navbar-brand" href="#">Nombre de la tienda</a>
+				<Link to={'/'} className="navbar-brand">Nombre de la tienda</Link>
 				<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 				</button>
@@ -25,7 +25,7 @@ export const Navbar = () => {
 							</a>
 							<ul className="dropdown-menu">
 								<li><a className="dropdown-item" href="#">CATEROGIA 1</a></li>
-								<li><a className="dropdown-item" href="#">CATEGORIA 2</a></li>
+								<li><Link to={'/shirt'}>Camisas</Link></li>
 							</ul>
 						</li>
 						<li className="nav-item">
