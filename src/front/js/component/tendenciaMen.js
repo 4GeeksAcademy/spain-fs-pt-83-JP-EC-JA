@@ -21,7 +21,7 @@ export const TendenciaMen = () => {
                             <div className="card-body">
                                 <h5 className="card-title">{product.title}</h5>
                                 <p className="card-text">{product.category}</p>
-                                <p className="card-text">{product.rating.count}</p>
+                                <p className="card-text">{product.rating.rate}</p>
                                 <button className="btn btn-outline-danger rounded rounded-1">
                                     <i className="bi bi-heart"></i>
                                 </button>
