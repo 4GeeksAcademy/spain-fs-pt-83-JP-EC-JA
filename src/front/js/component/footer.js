@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
 export const Footer = () => (
-	<footer className="footer mt-5 p-0 text-center">
+	<footer className="footer my-4 text-center border-2 border-top border-info-subtle pt-3">
 
 		<div className="container-fluid">
 			<div className="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3">
@@ -22,23 +22,23 @@ export const Footer = () => (
 				<div className="col px-3 py-2">
 					<h5 className="text-uppercase text-primary">contactanos</h5>
 					<p>
-						<i class="bi bi-envelope"></i> test@test.com
+						<i className="bi bi-envelope"></i> test@test.com
 					</p>
 					<p>
-						<i class="bi bi-telephone"></i> +34 000 00 00
+						<i className="bi bi-telephone"></i> +34 000 00 00
 					</p>
 				</div>
 			</div>
 		</div>
 
 
-		<hr></hr>
+		<hr className="border-2 border-info"></hr>
 		<p>
 			Copyright Todos los Derechos Reservados
 		</p>
-		<i class="bi bi-facebook"></i>
-		<i class="bi bi-instagram"></i>
-		<i class="bi bi-twitter-x"></i>
-		<i class="bi bi-youtube"></i>
+		<i className="bi bi-facebook"></i>
+		<i className="bi bi-instagram"></i>
+		<i className="bi bi-twitter-x"></i>
+		<i className="bi bi-youtube"></i>
 	</footer>
 );

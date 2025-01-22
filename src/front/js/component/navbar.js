@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-expand-lg bg-body-tertiary">
+		<nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary shadow">
 			<div className="container-fluid">
 				<Link className="navbar-brand" to='/'>Nombre de la tienda</Link>
 				<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,6 +25,8 @@ export const Navbar = () => {
 								CATEGORIA
 							</a>
 							<ul className="dropdown-menu">
+								<li><a className="dropdown-item" href="#">CATEROGIA 1</a></li>
+								<li><Link to={'/shirt'}>Camisas</Link></li>
 								<li><Link className="dropdown-item" to='/'>Home</Link></li>
 								<li><Link className="dropdown-item" to='/shopAll'>Shop All</Link></li>
 								<li><Link className="dropdown-item" to='/jewelry'>Jewelry</Link></li>
