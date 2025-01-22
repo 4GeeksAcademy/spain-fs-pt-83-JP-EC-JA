@@ -11,9 +11,7 @@ html, body{
 }
 
 .Card-products {
-    border-style: solid; 
-    border-width: 1px;
-    width: 30%;
+    width: 25%;
     height: 50%;
 
 }
@@ -25,14 +23,21 @@ html, body{
 }
 
 .card-body {
+    border-radius: 0 0 10px 10px;
+    background-color: #fff;
+    padding: 20px 15px;
     text-align: center;
-    padding: 3px;
-    margin: 3px;
+    border: 1px solid #ccc;
 }
  
-.bi {
-    text-align: center;
-    padding: 3px;
-    margin: 3px;
-    
+.btn {
+    margin: 2px;
+    padding: 2px;
+    width: 100px;
+    background-color: rgb(236, 215, 254);
+    color: rgb(31, 12, 32);
+    display: inline;
 }
+
+
+
