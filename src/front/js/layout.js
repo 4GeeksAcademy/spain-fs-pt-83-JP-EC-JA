@@ -3,6 +3,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 import { Home } from "./pages/home";
+
+import { ShopAll } from "./pages/shopAll";
+import { Jewelry } from "./pages/jewelry";
+import { MenClothes } from "./pages/mensclothes";
+import { WomanClothes } from "./pages/womansclothes";
+import { Electronics } from "./pages/electronics";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -15,7 +21,7 @@ const Layout = () => {
     // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
     const basename = process.env.BASENAME || "";
 
-    if(!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL/ >;
+    if (!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL />;
 
     return (
         <div>
@@ -24,6 +30,13 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
+                        
+                        <Route element={<ShopAll />} path="/shopall" />
+                        <Route element={<Jewelry />} path="/jewelry" />
+                        <Route element={<MenClothes />} path="/menclothes" />
+                        <Route element={<WomanClothes />} path="/womanclothes" />
+                        <Route element={<Electronics />} path="/electronics" />
+                        
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
