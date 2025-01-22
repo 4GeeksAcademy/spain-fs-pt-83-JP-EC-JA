@@ -6,7 +6,7 @@ export const Carrusel = () => {
     const { store, actions } = useContext(Context);
 
     return (
-        <div className="container-fluid my-5 pb-5">
+        <div className="container my-5 pb-5">
             <div className="carrusel">
                 <div className="wrap">
                     {

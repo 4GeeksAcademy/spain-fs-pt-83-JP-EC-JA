@@ -63,3 +63,10 @@ html, body{
     height: 200px;
     object-fit: contain;
 }
+
+.men img{
+    width: 200px;
+    height: 150px;
+    object-fit: contain;
+    margin: auto;
+}
