@@ -11,7 +11,7 @@ import { WomanClothes } from "./pages/womansclothes";
 import { Electronics } from "./pages/electronics";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
+import { Navbar } from "./component/navbar/navbar";
 import { Footer } from "./component/footer";
 
 
@@ -30,13 +30,11 @@ const Layout = () => {
                     <Navbar />
                     <Routes>
                         <Route element={<Home />} path="/" />
-                        
                         <Route element={<ShopAll />} path="/shopall" />
                         <Route element={<Jewelry />} path="/jewelry" />
                         <Route element={<MenClothes />} path="/menclothes" />
                         <Route element={<WomanClothes />} path="/womanclothes" />
                         <Route element={<Electronics />} path="/electronics" />
-                        
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />

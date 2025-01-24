@@ -43,8 +43,6 @@ html, body{
     height: 200px;
     border-radius: 5px;
     object-fit: contain;
-    
-
 }
 
 @keyframes slide{
@@ -64,9 +62,10 @@ html, body{
     object-fit: contain;
 }
 
-.men img{
+.men img , .jewelery img{
     width: 200px;
     height: 150px;
+    padding-top: 20px;
     object-fit: contain;
     margin: auto;
 }
@@ -82,7 +81,7 @@ html, body{
     object-fit: cover;
 }
 
-.card-body {
+.card-body-all {
     border-radius: 0 0 10px 10px;
     background-color: #fff;
     padding: 20px 15px;
@@ -90,7 +89,7 @@ html, body{
     border: 1px solid #ccc;
 }
  
-.btn {
+.btn-all {
     margin: 2px;
     padding: 2px;
     width: 100px;
