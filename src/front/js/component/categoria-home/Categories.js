@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import joya from "../../img/joya1.jpg"
-import { Context } from "../store/appContext";
+import { Context } from "../../store/appContext";
 import { Link } from "react-router-dom";
 
 const electronics = ['https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg']
@@ -14,7 +13,7 @@ export const Catergories = () => {
     <div className="py-5 text-center categoria">
       <div className="container-fluid">
         <h4 className="text-uppercase">Compra por Categoria</h4>
-        <p className="py-4">Aquí podras ver nuestro catalogo más completo </p>
+        <p className="py-4">Aquí podras ver nuestro catalogo más completo.. </p>
 
         <div className="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4">
 

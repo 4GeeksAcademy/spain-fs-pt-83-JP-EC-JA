@@ -9,45 +9,45 @@ export const ShopAll = () => {
 
                 <div className=" Card-products m-3  p-2 col-3">
                     <img className="card-img-top" src={paisaje1} alt="..." />
-                    <div className="card-body">
+                    <div className="card-body-all">
                         <h5>PRODUCTO 1</h5>
                         <p>50€</p>
-                        <a href="#" className="btn btn-light">More info</a>
-                        <a href="#" className="btn btn-light"><i className="bi bi-heart"></i></a>
-                        <a href="#" className="btn btn-light"><i className="bi bi-cart3"></i></a>
+                        <a href="#" className="btn btn-light btn-all">More info</a>
+                        <a href="#" className="btn btn-light btn-all"><i className="bi bi-heart"></i></a>
+                        <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
                     </div>
                 </div>
 
                 <div className=" Card-products m-3 p-2 col-3">
                     <img className="card-img-top" src={paisaje1} alt="..." />
-                    <div className="card-body">
+                    <div className="card-body-all">
                         <h5>PRODUCTO 1</h5>
                         <p>50€</p>
-                        <a href="#" className="btn btn-light">More info</a>
-                        <a href="#" className="btn btn-light"><i className="bi bi-heart"></i></a>
-                        <a href="#" className="btn btn-light"><i className="bi bi-cart3"></i></a>
+                        <a href="#" className="btn btn-light btn-all">More info</a>
+                        <a href="#" className="btn btn-light btn-all"><i className="bi bi-heart"></i></a>
+                        <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
                     </div>
                 </div>
 
                 <div className=" Card-products m-3 p-2 col-3">
                     <img className="card-img-top" src={paisaje1} alt="..." />
-                    <div className="card-body">
+                    <div className="card-body-all">
                         <h5>PRODUCTO 1</h5>
                         <p>50€</p>
-                        <a href="#" className="btn btn-light">More info</a>
-                        <a href="#" className="btn btn-light"><i className="bi bi-heart"></i></a>
-                        <a href="#" className="btn btn-light"><i className="bi bi-cart3"></i></a>
+                        <a href="#" className="btn btn-light btn-all">More info</a>
+                        <a href="#" className="btn btn-light btn-all"><i className="bi bi-heart"></i></a>
+                        <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
                     </div>
                 </div>
 
                 <div className=" Card-products m-3 p-2 col-3">
                     <img className="card-img-top" src={paisaje1} alt="..." />
-                    <div className="card-body">
+                    <div className="card-body-all">
                         <h5>PRODUCTO 1</h5>
                         <p>50€</p>
-                        <a href="#" className="btn btn-light">More info</a>
-                        <a href="#" className="btn btn-light"><i className="bi bi-heart"></i></a>
-                        <a href="#" className="btn btn-light"><i className="bi bi-cart3"></i></a>
+                        <a href="#" className="btn btn-light btn-all">More info</a>
+                        <a href="#" className="btn btn-light btn-all"><i className="bi bi-heart"></i></a>
+                        <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
                     </div>
                 </div>
             </div>

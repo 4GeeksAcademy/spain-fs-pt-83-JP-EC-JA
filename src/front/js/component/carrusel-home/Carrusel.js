@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import { Context } from "../store/appContext";
+import { Context } from "../../store/appContext";
 
 
 export const Carrusel = () => {
     const { store, actions } = useContext(Context);
 
     return (
-        <div className="container my-5 pb-5">
+        <div className="my-5 pb-5">
             <div className="carrusel">
                 <div className="wrap">
                     {
