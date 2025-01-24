@@ -10,21 +10,12 @@ export const Jumbotrom = () => {
                 <div className="carousel-inner">
                     <div className="carousel-item active" data-bs-interval="4000">
                         <img src={jumbo1} className="d-block w-100" alt="..." />
-                        <div className="carousel-caption d-none d-md-block text-end">
-                            <button type="button" className="btn btn-light">Details</button>
-                        </div>
                     </div>
                     <div className="carousel-item" data-bs-interval="4000">
                         <img src={jumbo2} className="d-block w-100" alt="..." />
-                        <div className="carousel-caption d-none d-md-block text-end">
-                            <button type="button" className="btn btn-light">Details</button>
-                        </div>
                     </div>
                     <div className="carousel-item" data-bs-interval="4000">
                         <img src={jumbo3} className="d-block w-100" alt="..." />
-                        <div className="carousel-caption d-none d-md-block text-end">
-                            <button type="button" className="btn btn-light">Details</button>
-                        </div>
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
