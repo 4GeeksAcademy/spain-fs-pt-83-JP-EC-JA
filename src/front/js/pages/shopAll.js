@@ -12,9 +12,9 @@ export const ShopAll = () => {
                     <div className="card-body-all">
                         <h5>PRODUCTO 1</h5>
                         <p>50€</p>
-                        <a href="#" className="btn btn-light">More info</a>
-                        <a href="#" className="btn btn-light"><i className="bi bi-heart"></i></a>
-                        <a href="#" className="btn btn-light"><i className="bi bi-cart3"></i></a>
+                        <a href="#" className="btn btn-light btn-all">More info</a>
+                        <a href="#" className="btn btn-light btn-all"><i className="bi bi-heart"></i></a>
+                        <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
                     </div>
                 </div>
 
@@ -23,9 +23,9 @@ export const ShopAll = () => {
                     <div className="card-body-all">
                         <h5>PRODUCTO 1</h5>
                         <p>50€</p>
-                        <a href="#" className="btn btn-light">More info</a>
-                        <a href="#" className="btn btn-light"><i className="bi bi-heart"></i></a>
-                        <a href="#" className="btn btn-light"><i className="bi bi-cart3"></i></a>
+                        <a href="#" className="btn btn-light btn-all">More info</a>
+                        <a href="#" className="btn btn-light btn-all"><i className="bi bi-heart"></i></a>
+                        <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
                     </div>
                 </div>
 
@@ -34,9 +34,9 @@ export const ShopAll = () => {
                     <div className="card-body-all">
                         <h5>PRODUCTO 1</h5>
                         <p>50€</p>
-                        <a href="#" className="btn btn-light">More info</a>
-                        <a href="#" className="btn btn-light"><i className="bi bi-heart"></i></a>
-                        <a href="#" className="btn btn-light"><i className="bi bi-cart3"></i></a>
+                        <a href="#" className="btn btn-light btn-all">More info</a>
+                        <a href="#" className="btn btn-light btn-all"><i className="bi bi-heart"></i></a>
+                        <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
                     </div>
                 </div>
 
