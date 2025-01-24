@@ -43,8 +43,6 @@ html, body{
     height: 200px;
     border-radius: 5px;
     object-fit: contain;
-    
-
 }
 
 @keyframes slide{

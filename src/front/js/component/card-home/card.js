@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
-import rigo from "../../img/rigo-baby.jpg"
-import { Context } from "../store/appContext";
-import { TendenciaMen } from "./tendenciaMen";
-import { TendenciaJewelery } from "./tendenciaJewelery";
+import { Context } from "../../store/appContext";
+import { TendenciaMen } from "../tendencia-home/tendenciaMen";
+import { TendenciaJewelery } from "../tendencia-home/tendenciaJewelery";
 
 
 export const Card = () => {

@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import joya from "../../img/joya1.jpg"
-import { Context } from "../store/appContext";
+import { Context } from "../../store/appContext";
 import { Link } from "react-router-dom";
 
 const electronics = ['https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg']
