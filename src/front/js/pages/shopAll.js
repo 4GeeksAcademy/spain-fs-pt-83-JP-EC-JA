@@ -7,7 +7,7 @@ export const ShopAll = () => {
         <div className="container">
             <div className="row d-flex">
 
-                <div className=" Card-products m-3  p-2 col-3">
+                <div className=" Card-products   col-3">
                     <img className="card-img-top" src={paisaje1} alt="..." />
                     <div className="card-body">
                         <h5>PRODUCTO 1</h5>
@@ -18,7 +18,7 @@ export const ShopAll = () => {
                     </div>
                 </div>
 
-                <div className=" Card-products m-3 p-2 col-3">
+                <div className=" Card-products  col-3">
                     <img className="card-img-top" src={paisaje1} alt="..." />
                     <div className="card-body">
                         <h5>PRODUCTO 1</h5>
@@ -29,7 +29,7 @@ export const ShopAll = () => {
                     </div>
                 </div>
 
-                <div className=" Card-products m-3 p-2 col-3">
+                <div className=" Card-products col-3">
                     <img className="card-img-top" src={paisaje1} alt="..." />
                     <div className="card-body">
                         <h5>PRODUCTO 1</h5>

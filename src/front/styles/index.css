@@ -75,9 +75,12 @@ html, body{
     object-fit: contain;
     margin: auto;
 }
+
+
 .Card-products {
-    width: 25%;
-    height: 50%;
+    margin: 10px;
+    width: 18rem;
+    margin: 40px auto;
 
 }
 
