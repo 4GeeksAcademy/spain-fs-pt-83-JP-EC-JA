@@ -14,8 +14,7 @@ export const TendenciaJewelery = () => {
         <>
             {
                 store.jewelery.map(product => (
-
-
+                    
                     <div className="card shadow jewelery">
                         <img src={product.image} className="card-img-top" alt="..." />
                         <div className="card-body">

@@ -4,7 +4,7 @@ import "../../styles/index.css";
 
 export const ShopAll = () => {
     return (
-        <div className="container">
+        <div className="">
             <div className="row d-flex">
 
                 <div className=" Card-products m-3  p-2 col-3">

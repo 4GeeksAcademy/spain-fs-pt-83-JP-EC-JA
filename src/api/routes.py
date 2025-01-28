@@ -12,11 +12,10 @@ api = Blueprint('api', __name__)
 CORS(api)
 
 
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
+@api.route('/user', methods=['GET'])
+def handle_get_users():
 
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
+    all_users = User.query.all()
+    all_users = list(map(lambda x: x.serialize(), all_users))
 
-    return jsonify(response_body), 200
+    return jsonify(all_users), 200
