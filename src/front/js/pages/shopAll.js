@@ -4,7 +4,11 @@ import "../../styles/index.css";
 
 export const ShopAll = () => {
     return (
+
+      
+
         <div className="card-container">
+
             <div className="row d-flex">
 
                 <div className=" Card-products   col-3">
