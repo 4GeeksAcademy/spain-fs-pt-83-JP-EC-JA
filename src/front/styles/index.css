@@ -127,6 +127,11 @@ html, body{
     border-radius: 8px;
 }
 
+.card-Shop p, a {
+    margin-top: 10px;
+}
+
+
 
 
 

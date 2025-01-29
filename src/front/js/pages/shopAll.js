@@ -10,8 +10,8 @@ export const ShopAll = () => {
                 <div className=" Card-products   col-3">
                     <img className="card-img" src='https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg' alt="..." />
                     <div className="card-Shop">
-                        <h5>PRODUCTO 1</h5>
-                        <p>50€</p>
+                        <h5>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</h5>
+                        <p>125€</p>
                         <a href="#" className="btn btn-light btn-all">More info</a>
                         <a href="#" className="btn btn-light btn-all"><i className="bi bi-heart"></i></a>
                         <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
@@ -21,7 +21,7 @@ export const ShopAll = () => {
                 <div className=" Card-products  col-3">
                     <img className="card-img" src='https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg' alt="..." />
                     <div className="card-Shop">
-                        <h5>PRODUCTO 1</h5>
+                        <h5>Mens Casual Premium Slim Fit T-Shirts</h5>
                         <p>50€</p>
                         <a href="#" className="btn btn-light btn-all">More info</a>
                         <a href="#" className="btn btn-light btn-all"><i className="bi bi-heart"></i></a>
@@ -32,7 +32,7 @@ export const ShopAll = () => {
                 <div className=" Card-products col-3">
                     <img className="card-img" src='https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg' alt="..." />
                     <div className="card-Shop">
-                        <h5>PRODUCTO 1</h5>
+                        <h5>PMens Cotton Jacket</h5>
                         <p>50€</p>
                         <a href="#" className="btn btn-light btn-all">More info</a>
                         <a href="#" className="btn btn-light btn-all"><i className="bi bi-heart"></i></a>
@@ -43,7 +43,7 @@ export const ShopAll = () => {
                 <div className=" Card-products col-3">
                     <img className="card-img" src='https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg' alt="..." />
                     <div className="card-Shop">
-                        <h5>PRODUCTO 1</h5>
+                        <h5>Mens Casual Slim Fit</h5>
                         <p>50€</p>
                         <a href="#" className="btn btn-light btn-all">More info</a>
                         <a href="#" className="btn btn-light btn-all"><i className="bi bi-heart"></i></a>
@@ -126,8 +126,8 @@ export const ShopAll = () => {
                 <div className=" Card-products col-3">
                     <img className="card-img" src='https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg' alt="..." />
                     <div className="card-Shop">
-                        <h5>PRODUCTO 1</h5>
-                        <p>50€</p>
+                        <h5>John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet</h5>
+                        <p>695€</p>
                         <a href="#" className="btn btn-light btn-all">More info</a>
                         <a href="#" className="btn btn-light btn-all"><i className="bi bi-heart"></i></a>
                         <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
