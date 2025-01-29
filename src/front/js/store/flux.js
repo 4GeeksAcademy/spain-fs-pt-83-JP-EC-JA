@@ -5,6 +5,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			categories: [],
 			men: [],
 			jewelery: [],
+			woman: [],
+			electronics: [],
+
 		},
 
 		actions: {
