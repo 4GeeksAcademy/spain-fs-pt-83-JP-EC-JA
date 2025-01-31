@@ -6,7 +6,7 @@ import { Home } from "./pages/home";
 
 
 import { ShopAll } from "./pages/shopAll";
-import { Jewelry } from "./pages/jewelry";
+import { Jewelery } from "./pages/jewelery";
 import { MenClothes } from "./pages/mensclothes";
 import { WomanClothes } from "./pages/womansclothes";
 import { Electronics } from "./pages/electronics";
@@ -32,7 +32,7 @@ const Layout = () => {
                     <Routes>
                         <Route element={<Home />} path="/" />
                         <Route element={<ShopAll />} path="/shopall" />
-                        <Route element={<Jewelry />} path="/jewelry" />
+                        <Route element={<Jewelery/>} path="/jewelery" />
                         <Route element={<MenClothes />} path="/menclothes" />
                         <Route element={<WomanClothes />} path="/womanclothes" />
                         <Route element={<Electronics />} path="/electronics" />

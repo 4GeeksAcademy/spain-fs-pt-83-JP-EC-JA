@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "../../styles/index.css";
 import { Context } from "../store/appContext";
 
-export const MenClothes = () => {
+export const Jewelery = () => {
     const {store} = useContext(Context);
     console.log(store)
     
@@ -10,7 +10,7 @@ export const MenClothes = () => {
         <div className="card-container">
 
         {
-            store.men.map(product => (
+            store.jewelery.map(product => (
 
 
                 <div className="card-products col-3">
