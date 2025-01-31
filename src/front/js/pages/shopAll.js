@@ -4,6 +4,7 @@ import { Context } from "../store/appContext";
 
 export const ShopAll = () => {
 
+
     const { store } = useContext(Context);
     console.log(store)
 
