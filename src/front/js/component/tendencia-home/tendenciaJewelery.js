@@ -22,10 +22,10 @@ export const TendenciaJewelery = () => {
                             <h5 className="card-title">{product.title}</h5>
                             <p className="card-text">{product.category}</p>
                             <p className="card-text">{product.rating.rate}</p>
-                            <button className="btn btn-outline-danger rounded rounded-1">
+                            <button className="btn btn-light rounded rounded-1">
                                 <i className="bi bi-heart"></i>
                             </button>
-                            <button className="btn btn-outline-success rounded rounded-1">
+                            <button className="btn btn-light rounded rounded-1">
                                 <i className="bi bi-cart3"></i>
                             </button>
                         </div>
