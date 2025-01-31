@@ -48,7 +48,7 @@ def handle_invalid_usage(error):
     return jsonify(error.to_dict()), error.status_code
 
 # generate sitemap with all your endpoints
-
+#client_user = os.getenv('CLIENT_ID') 
 
 @app.route('/')
 def sitemap():

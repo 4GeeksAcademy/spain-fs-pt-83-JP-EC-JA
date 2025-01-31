@@ -17,7 +17,7 @@ export const Navbar = () => {
 
 						<div className="col-md-6 offset-md-2 p-1">
 							<form className="d-flex" role="search">
-								<input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+								<input className="form-control me-2" type="search" placeholder="Search for category" aria-label="Search" />
 								<button className="btn btn-outline-success" type="submit">Search</button>
 							</form>
 						</div>
@@ -30,7 +30,7 @@ export const Navbar = () => {
 								<ul className="dropdown-menu">
 									<li><Link className="dropdown-item" to='/'>Home</Link></li>
 									<li><Link className="dropdown-item" to='/shopAll'>Shop All</Link></li>
-									<li><Link className="dropdown-item" to='/jewelry'>Jewelry</Link></li>
+									<li><Link className="dropdown-item" to='/jewelery'>Jewelery</Link></li>
 									<li><Link className="dropdown-item" to='/menclothes'>Men's Clothes</Link></li>
 									<li><Link className="dropdown-item" to='/womanclothes'>Woman's Clothes</Link></li>
 									<li><Link className="dropdown-item" to='/electronics'>Electronics</Link></li>

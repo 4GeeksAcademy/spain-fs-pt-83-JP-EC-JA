@@ -23,10 +23,13 @@ const injectContext = PassedComponent => {
 
 		useEffect(() => {
 			
-			state.actions.loadProducts();
+			state.actions.loadShopAll();
 			state.actions.loadCategories();
 			state.actions.loadTendenciaMen();
 			state.actions.loadTendenciaJewelery();
+			state.actions.loadElectronics();
+			state.actions.loadWomansClothes();
+			
 			
 		}, []);
 
