@@ -11,7 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 
 		actions: {
-			loadProducts: () => {
+			loadShopAll: () => {
 				const store = getStore();
 
 				if (store.products.length === 0) {
@@ -59,6 +59,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 						.then(respJson => {
 							const response = respJson;
 							setStore({ jewelery: response })
+						})
+				}
+			},
+
+		    loadWomansClothes: () => {
+				const store = getStore();
+
+				if (store.woman.length === 0) {
+					fetch(`https://fakestoreapi.com/products/category/women's clothing`)
+						.then(res => res.json())
+						.then(respJson => {
+							const response = respJson;
+							setStore({ woman: response })
+						})
+				}
+			},
+
+			loadElectronics: () => {
+				const store = getStore();
+
+				if (store.electronics.length === 0) {
+					fetch(`https://fakestoreapi.com/products/category/electronics`)
+						.then(res => res.json())
+						.then(respJson => {
+							const response = respJson;
+							setStore({ electronics: response })
 						})
 				}
 			},
