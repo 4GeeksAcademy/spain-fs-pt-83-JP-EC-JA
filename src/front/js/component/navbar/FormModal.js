@@ -18,45 +18,41 @@ export const VistaModal = () => {
                                 <form>
                                     <h1>Create Account</h1>
                                     <div className="social-icons">
-                                        <a href="#" className="icon"><i className="fa-brands fa-google-plus-g"></i></a>
-                                        <a href="#" className="icon"><i className="fa-brands fa-facebook-f"></i></a>
-                                        <a href="#" className="icon"><i className="fa-brands fa-github"></i></a>
-                                        <a href="#" className="icon"><i className="fa-brands fa-linkedin-in"></i></a>
+                                        <a href="#" className="icon shadow"><i className="fa-brands fa-google-plus-g"></i></a>
                                     </div>
                                     <span>or use your email for registeration</span>
                                     <input type="text" placeholder="Name" />
                                     <input type="email" placeholder="Email" />
                                     <input type="password" placeholder="Password" />
-                                    <button>Sign Up</button>
+                                    <button type="submit" className="shadow">Sign Up</button>
                                 </form>
                             </div>
                             <div className="form-container sign-in">
-                                <form>
-                                    <h1>Sign In</h1>
-                                    <div className="social-icons">
-                                        <a href="#" className="icon"><i className="fa-brands fa-google-plus-g"></i></a>
-                                        <a href="#" className="icon"><i className="fa-brands fa-facebook-f"></i></a>
-                                        <a href="#" className="icon"><i className="fa-brands fa-github"></i></a>
-                                        <a href="#" className="icon"><i className="fa-brands fa-linkedin-in"></i></a>
-                                    </div>
-                                    <span>or use your email password</span>
+                                <form onSubmit={(evt) =>{
+                                    evt.preventDefault();
+                                    console.log(evt)
+                                }}>
+                                    <h1>Sign In</h1>    
                                     <input type="email" placeholder="Email" />
                                     <input type="password" placeholder="Password" />
+                                    <div className="social-icons">
+                                        <a href="#" className="icon shadow"><i className="fa-brands fa-google-plus-g"></i></a>
+                                    </div>
                                     <a href="#">Forget Your Password?</a>
-                                    <button>Sign In</button>
+                                    <button type="submit" className="shadow">Sign In</button>
                                 </form>
                             </div>
                             <div className="toggle-container">
                                 <div className="toggle">
                                     <div className="toggle-panel toggle-left">
-                                        <h1>Welcome Back!</h1>
-                                        <p>Enter your personal details to use all of site features</p>
-                                        <button onClick={() => setSignUp(false)} className="hidden" id="login">Sign In</button>
+                                        <h1 className="text-black">Welcome Back!</h1>
+                                        <p className="text-black">Enter your personal details to use all of site features</p>
+                                        <button onClick={() => setSignUp(false)} className="hidden shadow" id="login">Sign In</button>
                                     </div>
                                     <div className="toggle-panel toggle-right">
-                                        <h1>Welcome, Friend!</h1>
-                                        <p>Enter your personal details to use all of site features</p>
-                                        <button onClick={() => setSignUp(true)} className="hidden" id="register">Sign Up</button>
+                                        <h1 className="text-black">Welcome, Friend!</h1>
+                                        <p className="text-black">Enter your personal details to use all of site features</p>
+                                        <button onClick={() => setSignUp(true)} className="hidden shadow" id="register">Sign Up</button>
                                     </div>
                                 </div>
                             </div>

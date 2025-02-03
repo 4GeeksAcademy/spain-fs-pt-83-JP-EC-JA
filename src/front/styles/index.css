@@ -62,9 +62,6 @@ html, body{
     object-fit: contain;
 }
 
-.tendencia{
-    background-color: #f5f5f5;
-}
 
 .men img , .jewelery img{
     width: 200px;
@@ -73,6 +70,17 @@ html, body{
     object-fit: contain;
     margin: auto;
 }
+
+.men h5 , .jewelery h5 {
+    font-size: 1em;
+}
+
+.jewelery img:hover {
+    transform: translate(0px, -6px);
+ }
+ .men img:hover {
+    transform: translate(0px, -6px);
+ }
 
 .jewelery img:hover {
     transform: translate(0px, -6px);

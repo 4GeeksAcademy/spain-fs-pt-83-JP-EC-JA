@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 export const ShopAll = () => {
 
+
     const { store } = useContext(Context);
     console.log(store)
 

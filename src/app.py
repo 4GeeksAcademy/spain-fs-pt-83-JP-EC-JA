@@ -10,14 +10,25 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
+from flask_jwt_extended import JWTManager
+from datetime import timedelta
 
 # from models import Person
 
 ENV = "development" if os.getenv("FLASK_DEBUG") == "1" else "production"
+
 static_file_dir = os.path.join(os.path.dirname(
     os.path.realpath(__file__)), '../public/')
 app = Flask(__name__)
 app.url_map.strict_slashes = False
+
+
+
+app.config["JWT_SECRET_KEY"] = "secret-token"
+app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=3)   #Token de acceso dura 3 horas
+app.config["JWT_REFRESH_TOKEN_EXPIRES"] = timedelta(days=7)   #Refresh token dura 7 días
+jwt = JWTManager(app)
+
 
 # database condiguration
 db_url = os.getenv("DATABASE_URL")
@@ -48,7 +59,7 @@ def handle_invalid_usage(error):
     return jsonify(error.to_dict()), error.status_code
 
 # generate sitemap with all your endpoints
-
+#client_user = os.getenv('CLIENT_ID') 
 
 @app.route('/')
 def sitemap():
