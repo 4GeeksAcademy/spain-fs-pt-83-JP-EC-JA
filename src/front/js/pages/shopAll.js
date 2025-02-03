@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 export const ShopAll = () => {
 
 
-    const { store } = useContext(Context);
+    const { store, actions } = useContext(Context);
     console.log(store)
 
 
@@ -25,7 +25,13 @@ export const ShopAll = () => {
                             <p>{product.category}</p>
                             <p>{product.rating.rate}</p>
                             <a href="#" className="btn btn-light btn-all">More info</a>
-                            <a href="#" className="btn btn-light btn-all"><i className="bi bi-heart"></i></a>
+                            <a href="#" className="btn btn-light btn-all">
+                                {
+                                    store.favorites.includes(product.id) ?
+                                        <i onClick={() => actions.removeFavorite(product.id)} className="fa-solid fa-heart"></i> :
+                                        <i onClick={() => actions.addFavorite(product.id)} className="bi bi-heart"></i>
+                                }
+                            </a>
                             <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
                         </div>
                     </div>

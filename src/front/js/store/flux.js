@@ -1,3 +1,5 @@
+import { Favorites } from "../pages/favorites";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -7,7 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			jewelery: [],
 			woman: [],
 			electronics: [],
-
+			favorites: [],
 		},
 
 		actions: {
@@ -89,6 +91,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+			addFavorite: (id) => {
+                const favorites = getStore().favorites;
+                const newFavorites = [...favorites, id];
+                setStore({favorites: newFavorites})
+            },
+
+			removeFavorite: (id) => {
+                const favorites = getStore().favorites;
+                const newFavorites = favorites.filter(products => products != id)
+                setStore({favorites: newFavorites})								
+            },
 
 		}
 	};
