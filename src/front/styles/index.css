@@ -74,6 +74,13 @@ html, body{
     margin: auto;
 }
 
+.jewelery img:hover {
+    transform: translate(0px, -6px);
+ }
+ .men img:hover {
+    transform: translate(0px, -6px);
+ }
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
