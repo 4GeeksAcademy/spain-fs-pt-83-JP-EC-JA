@@ -24,11 +24,14 @@ export const VistaModal = () => {
                                     <input type="text" placeholder="Name" />
                                     <input type="email" placeholder="Email" />
                                     <input type="password" placeholder="Password" />
-                                    <button className="shadow">Sign Up</button>
+                                    <button type="submit" className="shadow">Sign Up</button>
                                 </form>
                             </div>
                             <div className="form-container sign-in">
-                                <form>
+                                <form onSubmit={(evt) =>{
+                                    evt.preventDefault();
+                                    console.log(evt)
+                                }}>
                                     <h1>Sign In</h1>    
                                     <input type="email" placeholder="Email" />
                                     <input type="password" placeholder="Password" />
@@ -36,7 +39,7 @@ export const VistaModal = () => {
                                         <a href="#" className="icon shadow"><i className="fa-brands fa-google-plus-g"></i></a>
                                     </div>
                                     <a href="#">Forget Your Password?</a>
-                                    <button className="shadow">Sign In</button>
+                                    <button type="submit" className="shadow">Sign In</button>
                                 </form>
                             </div>
                             <div className="toggle-container">
