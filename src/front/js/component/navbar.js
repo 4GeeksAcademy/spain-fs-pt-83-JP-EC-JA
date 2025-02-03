@@ -40,7 +40,7 @@ export const Navbar = () => {
 						</li>
 						<li className="nav-item">
 							<a className="nav-link active" aria-current="page" href="#">
-								<i className="bi bi-heart"></i>
+								<i className="bi bi-heart"></i>								
 							</a>
 						</li>
 						<li className="nav-item">
