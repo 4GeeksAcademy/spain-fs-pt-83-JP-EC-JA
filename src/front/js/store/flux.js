@@ -102,7 +102,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                 const newFavorites = favorites.filter(products => products != id)
                 setStore({favorites: newFavorites})								
             },
-
 		}
 	};
 };
