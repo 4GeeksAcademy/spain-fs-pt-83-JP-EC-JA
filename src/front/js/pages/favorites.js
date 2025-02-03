@@ -1,10 +1,17 @@
 import React from "react";
+import "../../styles/index.css";
+import { Context } from "../store/appContext";
 
 export const Favorites = () => {
+    const {store} = useContext(Context);
+        console.log(store)
 
     return (
-        <div>
-            Favoritos
-        </div>
+        <>
+            <Jumbotrom />
+			<VistaModal />
+            <h1>Favoritos</h1>
+            <Carrusel />
+        </>
     );
 }
