@@ -1,5 +1,3 @@
-import { Favorites } from "../pages/favorites";
-
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {

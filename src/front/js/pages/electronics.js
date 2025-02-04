@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "../../styles/index.css";
 import { Context } from "../store/appContext";
+import { VistaModal } from "../component/navbar/FormModal";
 
 export const Electronics = () => {
     const {store, actions} = useContext(Context);
@@ -8,8 +9,9 @@ export const Electronics = () => {
     
     return (
         <div className="card-container">
+            <VistaModal />
 
-        {
+        {            
             store.electronics.map(product => (
 
 

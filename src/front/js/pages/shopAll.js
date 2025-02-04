@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "../../styles/index.css";
 import { Context } from "../store/appContext";
+import { VistaModal } from "../component/navbar/FormModal";
 
 export const ShopAll = () => {
 
@@ -13,6 +14,7 @@ export const ShopAll = () => {
     return (
 
         <div className="card-container">
+            <VistaModal />
 
             {
                 store.products.map(product => (
