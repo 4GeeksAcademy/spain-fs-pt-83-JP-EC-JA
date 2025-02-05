@@ -165,3 +165,4 @@ def handle_get_favorite(id):
     if not favorite:
         return jsonify({'msg': 'Favorito no encontrado'}), 404
     return jsonify(favorite.serialize()), 200
+
