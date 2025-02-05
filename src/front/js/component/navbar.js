@@ -31,6 +31,7 @@ export const Navbar = () => {
 								<li><Link className="dropdown-item" to='/menclothes'>Men's Clothes</Link></li>
 								<li><Link className="dropdown-item" to='/womanclothes'>Woman's Clothes</Link></li>
 								<li><Link className="dropdown-item" to='/electronics'>Electronics</Link></li>
+								<li><Link className="dropdown-item" to='/favorites'>Favorites</Link></li>
 							</ul>
 						</li>
 						<li className="nav-item">
@@ -40,7 +41,7 @@ export const Navbar = () => {
 						</li>
 						<li className="nav-item">
 							<a className="nav-link active" aria-current="page" href="#">
-								<i className="bi bi-heart"></i>
+								<i className="bi bi-heart"></i>								
 							</a>
 						</li>
 						<li className="nav-item">
