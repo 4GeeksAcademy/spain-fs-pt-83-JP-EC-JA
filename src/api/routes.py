@@ -166,3 +166,31 @@ def handle_get_favorite(id):
         return jsonify({'msg': 'Favorito no encontrado'}), 404
     return jsonify(favorite.serialize()), 200
 
+#------------------Crear un Favorito------------------------------------------------------
+
+@api.route('/favorite/<int:id>', methods=['POST'])
+def handle_add_favorite(id):
+
+    body = request.get_json(id)
+    print(body)
+
+    required_fields = ['product_id ']
+
+    for field in required_fields:
+        if field not in body or not body[field].strip():
+            return jsonify({'msg': f'Error: {field} no puede estar vacío'}), 400
+    
+
+    favorite = Favorite(
+        product_id = body["product_id"],
+        user_id = id
+        
+    )
+
+    try:
+        db.session.add(favorite)
+        db.session.commit()
+        return jsonify({'msg': 'Favorito creado exitosamente'}), 201
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'msg': 'Error al agregar el favorito', 'error': str(e)}), 500
