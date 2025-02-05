@@ -18,7 +18,7 @@ export const Favorites = () => {
                                 <h5 className="card-title">{product.title}</h5>
                                 <p>{product.category}</p>
                                 <p>{product.rating.rate}</p>
-                                <a href="#" className="btn btn-light btn-all">More info</a>
+                                <a href="#" className="btn btn-light btn-all" to={`/detail/${product.id}`}>More info</a>
                                 <a href="#" className="btn btn-light btn-all">
                                     {
                                         store.favorites.includes(product.id) ?

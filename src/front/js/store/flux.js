@@ -7,7 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			jewelery: [],
 			woman: [],
 			electronics: [],
-			productdetail: [],
+			productdetail: null,
             favorites: [],
 		},
 
@@ -95,7 +95,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(res => res.json())
 					.then(respJson => {
 						const response = respJson;
-						setStore({ productdetail: response })
+						setStore({ productdetail: response });
 					})
 
 			},

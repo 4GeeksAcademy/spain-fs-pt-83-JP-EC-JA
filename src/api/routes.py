@@ -171,7 +171,7 @@ def handle_get_favorite(id):
 @api.route('/favorite/<int:id>', methods=['POST'])
 def handle_add_favorite(id):
 
-    body = request.get_json(id)
+    body = request.get_json()
     print(body)
 
     required_fields = ['product_id ']
