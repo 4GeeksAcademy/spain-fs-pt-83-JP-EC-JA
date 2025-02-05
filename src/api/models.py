@@ -21,6 +21,7 @@ class User(db.Model):
     def check_password(self, password):
         """Verifica si la contraseña ingresada es correcta"""
         return check_password_hash(self.password, password)
+    favorites = db.relationship('Favorite', backref = 'user', lazy=True)
      
 
     def __repr__(self):
@@ -39,17 +40,18 @@ class User(db.Model):
     
 
 class Favorite (db.Model):
-    __tablename__ = 'favorite'
+    __tablename__ = 'favorites'
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"), nullable=False)
-    user = db.relationship('User', backref=db.backref('favorites', lazy=True, cascade="all, delete"))
+    product_id = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
-        return f'<Favorite {self.id} - user {self.user_id}>'
+        return f'<Favorite {self.id}: {self.product_id} - user {self.user_id}>'
 
     def serialize(self):
         return{
             "id": self.id,
-            "user_id": self.user_id
+            "user_id": self.user_id,
+            "product_id": self.product_id
         }
