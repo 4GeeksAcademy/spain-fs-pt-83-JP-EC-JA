@@ -46,7 +46,7 @@ def handler_create_user():
     body = request.get_json()
     print(body)
 
-    required_fields = ['email', 'password']
+    required_fields = ['username', 'email', 'password']
 
     for field in required_fields:
         if field not in body or not body[field].strip():
@@ -54,9 +54,18 @@ def handler_create_user():
 
     if User.query.filter_by(email=body["email"]).first():
         return jsonify({'msg': 'Error: El email ya está en uso'}), 400
+    
+    if User.query.filter_by(username=body["username"]).first():
+        return jsonify({'msg': 'Error: El username ya está en uso'}), 400
 
-    new_user = User(email=body["email"])
+    new_user = User(
+    username=body["username"],
+    name=body.get("name", ""), 
+    lastname=body.get("lastname", ""),
+    email=body["email"]
+)
     new_user.set_password(body["password"])
+
 
     try:
         db.session.add(new_user)
@@ -76,11 +85,8 @@ def handler_auth():
         return jsonify({'msg': 'Error: Faltan datos'}), 400
     
     user = User.query.filter_by(email=body['email']).first()
-    if not user:
-        return jsonify({'msg': 'Error: Usuario no encontrado'}), 404
-
-    if not user.check_password(body['password']):
-        return jsonify({'msg': 'Error: Contraseña incorrecta'}), 401
+    if not user or not user.check_password(body['password']):
+        return jsonify({'msg': 'Error: Usuario o contraseña incorrectos'}), 401
     
     token = create_access_token(identity=user.email)
 
@@ -97,3 +103,12 @@ def handle_delete_user(id):
     db.session.delete(user)
     db.session.commit()
     return jsonify({'msg': 'Usuario eliminado'}), 200
+
+#========================== encontrar favorito por id ==========================0
+
+@api.route('/favorite/<int:id>', methods=['GET'])
+def handle_get_favorite(id):
+    favorite = Favorite.query.get(id)
+    if not favorite:
+        return jsonify({'msg': 'Favorito no encontrado'}), 404
+    return jsonify(favorite.serialize()), 200
