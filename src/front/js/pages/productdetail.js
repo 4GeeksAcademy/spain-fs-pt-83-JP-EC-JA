@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import "../../styles/index.css";
 import { Context } from "../store/appContext";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 
@@ -30,13 +30,13 @@ export const ProductDetail = () => {
                 <p>{store.productdetail.price}€</p>
                 <h6>{store.productdetail.rating.rate}</h6>
                 <input type="number" className="number" min="0" max="100" placeholder="0" />
-                <a href="#" className="btn btn-light btn-all">
+                <Link to="#" className="btn btn-light btn-all">
                     {
                         store.favorites.includes(store.productdetail.id) ?
                             <i onClick={() => actions.removeFavorite(store.productdetail.id)} className="fa-solid fa-heart"></i> :
                             <i onClick={() => actions.addFavorite(store.productdetail.id)} className="bi bi-heart"></i>
                     }
-                </a>
+                </Link>
                 <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
 
             </div>

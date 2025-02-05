@@ -31,13 +31,13 @@ export const ShopAll = () => {
                             <p>{product.price}€</p>
                             <h6>{product.rating.rate}</h6>
                             <Link className="btn btn-light btn-all" to={`/detail/${product.id}`}>More info</Link>
-                            <a href="#" className="btn btn-light btn-all">
+                            <Link to='' className="btn btn-light btn-all">
                                 {
                                     store.favorites.includes(product.id) ?
                                         <i onClick={() => actions.removeFavorite(product.id)} className="fa-solid fa-heart"></i> :
                                         <i onClick={() => actions.addFavorite(product.id)} className="bi bi-heart"></i>
                                 }
-                            </a>
+                            </Link>
                             <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
                         </div>
                     </div>
