@@ -12,6 +12,7 @@ class User(db.Model):
     lastname = db.Column(db.String(32), nullable=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(256), nullable=False)
+    favorites = db.relationship('Favorite', backref = 'user', lazy=True)
      
     #is_active = db.Column(db.Boolean(), unique=False, nullable=False)
 
@@ -37,17 +38,18 @@ class User(db.Model):
     
 
 class Favorite (db.Model):
-    __tablename__ = 'favorite'
+    __tablename__ = 'favorites'
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"), nullable=False)
-    user = db.relationship('User', backref=db.backref('favorites', lazy=True, cascade="all, delete"))
+    product_id = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
-        return f'<Favorite {self.id} - user {self.user_id}>'
+        return f'<Favorite {self.id}: {self.product_id} - user {self.user_id}>'
 
     def serialize(self):
         return{
             "id": self.id,
-            "user_id": self.user_id
+            "user_id": self.user_id,
+            "product_id": self.product_id
         }
