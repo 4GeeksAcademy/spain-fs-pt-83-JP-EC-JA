@@ -25,7 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					
 					if (!auth.ok) throw Error();
 
-					const authJson = await register.json();
+					const authJson = await auth.json();
 					setStore({ authToken: authJson.token })
 					localStorage.setItem( 'token', authJson.token)
 					console.log(authJson);

@@ -21,7 +21,6 @@ class User(db.Model):
     def check_password(self, password):
         """Verifica si la contraseña ingresada es correcta"""
         return check_password_hash(self.password, password)
-    favorites = db.relationship('Favorite', backref = 'user', lazy=True)
      
 
     def __repr__(self):

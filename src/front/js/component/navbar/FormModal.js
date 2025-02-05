@@ -13,15 +13,20 @@ export const VistaModal = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
-    const onSubmitRegister = () => {
-        actions.handlerRegister({ username, name, lastname, email, password })
+    const [emailLogin, setEmailLogin] = useState();
+    const [passwordLogin, setPasswordLogin] = useState();
 
-    }
-
-    const onSubmitLogin = () => {
-        actions.handlerLogin({ email, password })
-
-    }
+    const onSubmitRegister = (event) => {
+        event.preventDefault();
+        actions.handlerRegister({ username, name, lastname, email, password });
+    };
+    
+    const onSubmitLogin = (event) => {
+        event.preventDefault();
+        console.log(event)
+        actions.handlerLogin({ email: emailLogin, password: passwordLogin });
+    };
+    
     return (
 
         <>
@@ -49,14 +54,14 @@ export const VistaModal = () => {
 
 
                             <div className="form-container sign-in">
-                                <form >
+                                <form id="forLogin" onSubmit={onSubmitLogin} >
                                     <h1>Sign In</h1>
-                                    <input name="email" type="email" placeholder="Email" />
-                                    <input name="password" type="password" placeholder="Password" />
+                                    <input name="email" type="email" placeholder="Email" value={emailLogin} onChange={(evt) => setEmailLogin(evt.target.value)}/>
+                                    <input name="password" type="password" placeholder="Password" value={passwordLogin} onChange={(evt) => setPasswordLogin(evt.target.value)} />
                                     <div className="social-icons">
                                         <a href="#" className="icon shadow"><i className="fa-brands fa-google-plus-g"></i></a>
                                     </div>
-                                    <button onClick={onSubmitLogin} type="submit" className="shadow">Sign In</button>
+                                    <button type="submit" className="shadow">Sign In</button>
                                 </form>
                             </div>
 

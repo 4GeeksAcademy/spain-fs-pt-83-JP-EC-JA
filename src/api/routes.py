@@ -118,20 +118,19 @@ def handle_get_favorite(id):
 @api.route('/favorite/<int:id>', methods=['POST'])
 def handle_add_favorite(id):
 
-    body = request.get_json(id)
+    body = request.get_json()
     print(body)
 
-    required_fields = ['product_id ']
+    
 
-    for field in required_fields:
-        if field not in body or not body[field].strip():
-            return jsonify({'msg': f'Error: {field} no puede estar vacío'}), 400
+    
+    if "product_id" not in body:
+        return jsonify({'msg': f'Error: product_id no puede estar vacío'}), 400
     
 
     favorite = Favorite(
         product_id = body["product_id"],
         user_id = id
-        
     )
 
     try:
