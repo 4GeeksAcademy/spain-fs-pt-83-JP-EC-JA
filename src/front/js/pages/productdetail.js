@@ -16,7 +16,7 @@ export const ProductDetail = () => {
             {
                 store.productdetail.map(product => (
 
-                    <div className="detail">
+                    <div className="detail p-5 m-5">
                         <div className="img-card">
                             <img src={product.image} className="card-img" alt="..."></img>
                         </div>

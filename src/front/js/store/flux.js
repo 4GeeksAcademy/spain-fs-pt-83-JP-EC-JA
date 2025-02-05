@@ -64,7 +64,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-		    loadWomansClothes: () => {
+			loadWomansClothes: () => {
 				const store = getStore();
 
 				if (store.woman.length === 0) {
@@ -92,11 +92,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			loadProductDetail: (id) => {
 				fetch(`https://fakestoreapi.com/products/${id}`)
-				.then(res => res.json())
-				.then(respJson => {
-					const response = respJson.result.properties;
-					setStore({ productdetail: response })
-				})
+					.then(res => res.json())
+					.then(respJson => {
+						const response = respJson;
+						setStore({ productdetail: response })
+					})
 
 			}
 
