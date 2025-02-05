@@ -1,22 +1,22 @@
 import React, { useContext } from "react";
 import "../../styles/index.css";
 import { Context } from "../store/appContext";
-import { Link, useParams, useSearchParams } from "react-router-dom";
+
 
 export const ProductDetail = () => {
 
 
     const { store } = useContext(Context);
     console.log(store)
-    
+
     return (
 
-        <div className="detail-card">
+        <div className="detail-card m-5 p-5">
 
             {
-                store.products.map(product => (
+                store.productdetail.map(product => (
 
-                    <div className="detail p-5 m-5">
+                    <div className="detail">
                         <div className="img-card">
                             <img src={product.image} className="card-img" alt="..."></img>
                         </div>
