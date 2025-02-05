@@ -7,8 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			jewelery: [],
 			woman: [],
 			electronics: [],
-			authToken: '',
-			favorites: [],
+			productdetail: null,
+            favorites: [],
 		},
 
 		actions: {
@@ -60,7 +60,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 
 				if (store.products.length === 0) {
-					fetch('https://fakestoreapi.com/products')
+					fetch('https://fakestoreapi.com/products/')
 						.then(res => res.json())
 						.then(respJson => {
 							const response = respJson;
@@ -108,7 +108,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-		    loadWomansClothes: () => {
+			loadWomansClothes: () => {
 				const store = getStore();
 
 				if (store.woman.length === 0) {
@@ -132,6 +132,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 							setStore({ electronics: response })
 						})
 				}
+			},
+
+			loadProductDetail: (id) => {
+				fetch(`https://fakestoreapi.com/products/${id}`)
+					.then(res => res.json())
+					.then(respJson => {
+						const response = respJson;
+						setStore({ productdetail: response });
+					})
+
 			},
 
 			addFavorite: (id) => {
