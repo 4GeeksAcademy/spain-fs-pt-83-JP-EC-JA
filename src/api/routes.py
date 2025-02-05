@@ -4,7 +4,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 from flask import Flask, request, jsonify, url_for, Blueprint
 from flask_jwt_extended import jwt_required, get_jwt_identity, create_access_token
 from werkzeug.security import generate_password_hash, check_password_hash
-from api.models import db, User, Favorite
+from api.models import db, User, Favorite, Cart
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 
@@ -122,8 +122,6 @@ def handle_add_favorite(id):
     print(body)
 
     
-
-    
     if "product_id" not in body:
         return jsonify({'msg': f'Error: product_id no puede estar vacío'}), 400
     
@@ -141,3 +139,29 @@ def handle_add_favorite(id):
         db.session.rollback()
         return jsonify({'msg': 'Error al agregar el favorito', 'error': str(e)}), 500
 
+
+#==================== ingresa producto al cart ==================
+
+@api.route('/cart/<int:id>', methods=['POST'])
+def handle_add_cart(id):
+
+    body = request.get_json()
+    print(body)
+
+    
+    if "product_id" not in body:
+        return jsonify({'msg': f'Error: product_id no puede estar vacío'}), 400
+    
+
+    cart = Cart(
+        product_id = body["product_id"],
+        user_id = id
+    )
+
+    try:
+        db.session.add(cart)
+        db.session.commit()
+        return jsonify({'msg': 'Favorito creado exitosamente'}), 201
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'msg': 'Error al agregar el favorito', 'error': str(e)}), 500
