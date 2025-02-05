@@ -24,7 +24,7 @@ export const ProductDetail = () => {
                             <h5 className="title">{product.title}</h5>
                             <p>{product.description}</p>
                             <p>{product.price}€</p>
-                            <h6>{product.rating}</h6>
+                            <h6>{product.rating.rate}</h6>
                             <input type="number" className="number" min="0" max="100" placeholder="0" />
                             <a href="#" className="btn btn-light btn-all"><i className="bi bi-heart"></i></a>
                             <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>

@@ -7,12 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			jewelery: [],
 			woman: [],
 			electronics: [],
-<<<<<<< HEAD
 			productdetail: [],
-
-=======
-			favorites: [],
->>>>>>> main
+            favorites: [],
 		},
 
 		actions: {
@@ -102,7 +98,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ productdetail: response })
 					})
 
-			}
+			},
 
 			addFavorite: (id) => {
                 const favorites = getStore().favorites;
