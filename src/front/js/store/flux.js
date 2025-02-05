@@ -7,6 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			jewelery: [],
 			woman: [],
 			electronics: [],
+			productdetail: [],
 
 		},
 
@@ -15,7 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 
 				if (store.products.length === 0) {
-					fetch('https://fakestoreapi.com/products')
+					fetch('https://fakestoreapi.com/products/')
 						.then(res => res.json())
 						.then(respJson => {
 							const response = respJson;
@@ -88,6 +89,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 						})
 				}
 			},
+
+			loadProductDetail: (id) => {
+				fetch(`https://fakestoreapi.com/products/${id}`)
+				.then(res => res.json())
+				.then(respJson => {
+					const response = respJson.result.properties;
+					setStore({ productdetail: response })
+				})
+
+			}
 
 
 		}

@@ -18,8 +18,9 @@ export const MenClothes = () => {
                     <div className="card-Shop">
                         <h5 className="card-title">{product.title}</h5>
                         <p>{product.category}</p>
+                        <p>{product.price}€</p>
                         <p>{product.rating.rate}</p>
-                        <a href="#" className="btn btn-light btn-all">More info</a>
+                        <a href="#" className="btn btn-light btn-all" to={`/detail/${product.id}`}>More info</a>
                         <a href="#" className="btn btn-light btn-all"><i className="bi bi-heart"></i></a>
                         <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
                     </div>
