@@ -29,6 +29,9 @@ const injectContext = PassedComponent => {
 			state.actions.loadTendenciaJewelery();
 			state.actions.loadElectronics();
 			state.actions.loadWomansClothes();
+			state.actions.loadProductDetail();
+			
+			
 			
 			
 		}, []);

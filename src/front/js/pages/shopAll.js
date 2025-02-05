@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
 import "../../styles/index.css";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
+import { ProductDetail } from "./productdetail";
+
 import { VistaModal } from "../component/navbar/FormModal";
 
 export const ShopAll = () => {
@@ -25,8 +28,9 @@ export const ShopAll = () => {
                         <div className="card-Shop">
                             <h5 className="card-title">{product.title}</h5>
                             <p>{product.category}</p>
-                            <p>{product.rating.rate}</p>
-                            <a href="#" className="btn btn-light btn-all">More info</a>
+                            <p>{product.price}€</p>
+                            <h6>{product.rating.rate}</h6>
+                            <Link className="btn btn-light btn-all" to={`/detail/${product.id}`}>More info</Link>
                             <a href="#" className="btn btn-light btn-all">
                                 {
                                     store.favorites.includes(product.id) ?
