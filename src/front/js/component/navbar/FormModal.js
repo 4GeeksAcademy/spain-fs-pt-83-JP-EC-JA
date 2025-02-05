@@ -1,12 +1,32 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../../../styles/modal.css";
+import { Context } from "../../store/appContext";
 
 
 
 export const VistaModal = () => {
+    const { actions, store } = useContext(Context);
+    const [signUp, setSignUp] = useState();
+    const [username, setUsername] = useState();
+    const [name, setName] = useState();
+    const [lastname, setLastname] = useState();
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
 
-    const [signUp, setSignUp] = useState()
+    const [emailLogin, setEmailLogin] = useState();
+    const [passwordLogin, setPasswordLogin] = useState();
 
+    const onSubmitRegister = (event) => {
+        event.preventDefault();
+        actions.handlerRegister({ username, name, lastname, email, password });
+    };
+    
+    const onSubmitLogin = (event) => {
+        event.preventDefault();
+        console.log(event)
+        actions.handlerLogin({ email: emailLogin, password: passwordLogin });
+    };
+    
     return (
 
         <>
@@ -14,34 +34,38 @@ export const VistaModal = () => {
                 <div className="modal-dialog modal-dialog-centered modal-lg">
                     <div className="modal-content border-0 bg-transparent">
                         <div className={`container ${signUp ? 'active' : ''}`} id="container">
+
+
                             <div className={`form-container sign-up`}>
-                                <form>
+                                <form >
                                     <h1>Create Account</h1>
                                     <div className="social-icons">
                                         <a href="#" className="icon shadow"><i className="fa-brands fa-google-plus-g"></i></a>
                                     </div>
                                     <span>or use your email for registeration</span>
-                                    <input type="text" placeholder="Name" />
-                                    <input type="email" placeholder="Email" />
-                                    <input type="password" placeholder="Password" />
-                                    <button type="submit" className="shadow">Sign Up</button>
+                                    <input name="username" type="text" placeholder="Username" value={username} onChange={(evt) => setUsername(evt.target.value)} />
+                                    <input name="name" type="text" placeholder="Name" value={name} onChange={(evt) => setName(evt.target.value)} />
+                                    <input name="lastname" type="text" placeholder="Lastname" value={lastname} onChange={(evt) => setLastname(evt.target.value)} />
+                                    <input name="email" type="email" placeholder="Email" value={email} onChange={(evt) => setEmail(evt.target.value)} />
+                                    <input name="password" type="password" placeholder="Password" value={password} onChange={(evt) => setPassword(evt.target.value)} />
+                                    <button onClick={onSubmitRegister} type="submit" className="shadow">Sign Up</button>
                                 </form>
                             </div>
+
+
                             <div className="form-container sign-in">
-                                <form onSubmit={(evt) =>{
-                                    evt.preventDefault();
-                                    console.log(evt)
-                                }}>
-                                    <h1>Sign In</h1>    
-                                    <input type="email" placeholder="Email" />
-                                    <input type="password" placeholder="Password" />
+                                <form id="forLogin" onSubmit={onSubmitLogin} >
+                                    <h1>Sign In</h1>
+                                    <input name="email" type="email" placeholder="Email" value={emailLogin} onChange={(evt) => setEmailLogin(evt.target.value)}/>
+                                    <input name="password" type="password" placeholder="Password" value={passwordLogin} onChange={(evt) => setPasswordLogin(evt.target.value)} />
                                     <div className="social-icons">
                                         <a href="#" className="icon shadow"><i className="fa-brands fa-google-plus-g"></i></a>
                                     </div>
-                                    <a href="#">Forget Your Password?</a>
                                     <button type="submit" className="shadow">Sign In</button>
                                 </form>
                             </div>
+
+
                             <div className="toggle-container">
                                 <div className="toggle">
                                     <div className="toggle-panel toggle-left">
@@ -56,6 +80,7 @@ export const VistaModal = () => {
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

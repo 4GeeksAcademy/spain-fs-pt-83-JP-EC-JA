@@ -12,6 +12,50 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 
 		actions: {
+
+			handlerLogin: async(body)=>{
+				try{
+					const auth = await fetch (`${process.env.BACKEND_URL}api/auth`, {
+						method: 'POST',
+						body: JSON.stringify(body),
+						headers: {
+							'Content-Type': 'application/json'
+						}
+					}) 
+					
+					if (!auth.ok) throw Error();
+
+					const authJson = await auth.json();
+					setStore({ authToken: authJson.token })
+					localStorage.setItem( 'token', authJson.token)
+					console.log(authJson);
+				} catch {
+					console.log('Error')
+				}
+
+			},
+
+			handlerRegister: async (body) => {
+
+				try{
+					const register = await fetch (`${process.env.BACKEND_URL}api/user`, {
+						method: 'POST',
+						body: JSON.stringify(body),
+						headers: {
+							'Content-Type': 'application/json'
+						}
+					}) 
+					
+					if (!register.ok) throw Error();
+
+					const registerJson = await register.json();
+					console.log(registerJson);
+				} catch {
+					console.log('Error')
+				}
+
+			},
+
 			loadShopAll: () => {
 				const store = getStore();
 
