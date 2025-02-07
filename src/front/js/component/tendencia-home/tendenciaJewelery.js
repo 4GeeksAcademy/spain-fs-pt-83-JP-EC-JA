@@ -6,10 +6,7 @@ import { Context } from "../../store/appContext";
 export const TendenciaJewelery = () => {
 
     const { store } = useContext(Context);
-    console.log(store)
-
-
-
+    
     return (
         <>
             {

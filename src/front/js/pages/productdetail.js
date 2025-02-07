@@ -9,8 +9,6 @@ export const ProductDetail = () => {
 
     const { store, actions } = useContext(Context);
     const params = useParams();
-    console.log(store)
-    console.log(params)
 
     useEffect(() => {
         actions.loadProductDetail(params.id)
