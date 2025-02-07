@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import "../../../styles/modal.css";
 import { Context } from "../../store/appContext";
+import { string } from "prop-types";
 
 
 
-export const VistaModal = () => {
+export const VistaModal = ({ onSubmit}) => {
     const { actions, store } = useContext(Context);
     const [signUp, setSignUp] = useState();
     const [username, setUsername] = useState();
@@ -19,23 +20,23 @@ export const VistaModal = () => {
     const onSubmitRegister = (event) => {
         event.preventDefault();
         actions.handlerRegister({ username, name, lastname, email, password });
+        onSubmit()
     };
     
-    const onSubmitLogin = (event) => {
+    const onSubmitLogin = async (event) => {
         event.preventDefault();
         console.log(event)
-        actions.handlerLogin({ email: emailLogin, password: passwordLogin });
+        await actions.handlerLogin({ email: emailLogin, password: passwordLogin });
+        onSubmit()
     };
     
     return (
 
         <>
-            <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className={`modal`} id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered modal-lg">
                     <div className="modal-content border-0 bg-transparent">
                         <div className={`container ${signUp ? 'active' : ''}`} id="container">
-
-
                             <div className={`form-container sign-up`}>
                                 <form >
                                     <h1>Create Account</h1>

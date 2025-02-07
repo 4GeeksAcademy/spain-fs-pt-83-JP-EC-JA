@@ -35,6 +35,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 
+			getUser: async()=>{
+				const token = localStorage.getItem('token');
+
+				try{
+					const user = await fetch (`${process.env.BACKEND_URL}api/user`,
+						{
+							method: 'GET',
+							headers: {
+								'Content-Type': 'application/json',
+								'Authorization': `Bearer${token}`
+							}
+						}
+					)
+
+					if(!user.ok) return Throw('error get user')
+					const userData = await user.json();
+					console.log(userData);
+					return userData[0];
+				}
+				catch{
+					console.log('error')
+				}
+			},
+
 			handlerRegister: async (body) => {
 
 				try{
