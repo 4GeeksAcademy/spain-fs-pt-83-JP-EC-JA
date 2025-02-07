@@ -9,7 +9,6 @@ import { VistaModal } from "../component/navbar/FormModal";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
-	console.log(store)
 
 	return (
 		<>
