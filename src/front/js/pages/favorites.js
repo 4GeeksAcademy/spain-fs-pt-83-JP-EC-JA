@@ -9,7 +9,7 @@ export const Favorites = () => {
 
     return (
         <div className="card-container">
-            <VistaModal />
+            
             {                
                 store.products.map(product => ( 
                     store.favorites.includes(product.id) ?
