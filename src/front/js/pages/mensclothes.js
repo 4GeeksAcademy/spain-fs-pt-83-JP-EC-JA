@@ -9,7 +9,7 @@ export const MenClothes = () => {
     
     return (
         <div className="card-container">
-            <VistaModal />
+        
 
         {
             store.men.map(product => (

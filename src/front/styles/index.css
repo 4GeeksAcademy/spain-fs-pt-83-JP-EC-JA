@@ -125,8 +125,13 @@ html, body{
     border-radius: 8px;
 }
 
+.modal{
+    display: block;
+}
 
-
+.show{
+    opacity: 1;
+}
 
 
 

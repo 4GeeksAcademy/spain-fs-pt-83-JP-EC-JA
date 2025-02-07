@@ -14,7 +14,6 @@ export const Home = () => {
 	return (
 		<>
 			<Jumbotrom />
-			<VistaModal />
 			<Card />
 			<Catergories />
 			<Carrusel />

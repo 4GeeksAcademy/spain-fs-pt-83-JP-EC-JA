@@ -14,7 +14,7 @@ export const ShopAll = () => {
     return (
 
         <div className="card-container">
-            <VistaModal />
+      
 
             {
                 store.products.map(product => (

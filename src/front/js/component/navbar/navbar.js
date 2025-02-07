@@ -1,10 +1,11 @@
-import React from "react";
-import { shopAll } from "../../pages/shopAll";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ButtonModal } from "./buttonModal";
-import { VistaModal } from "./FormModal";
+import { Context } from "../../store/appContext";
+
 
 export const Navbar = () => {
+
 	return (
 		<>
 			<nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary shadow">
