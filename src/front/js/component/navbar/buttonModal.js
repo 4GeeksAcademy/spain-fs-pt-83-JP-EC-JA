@@ -8,7 +8,7 @@ export const ButtonModal = () => {
 
     return (
         <>
-            <Link to='' className="nav-link active" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <Link to='' className="nav-link active">
                 <i className="bi bi-person"></i>
             </Link>
         </>

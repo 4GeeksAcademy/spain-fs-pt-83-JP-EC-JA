@@ -107,7 +107,7 @@ html, body{
 
 .card-img {
     width: 100%;
-    transition: 4s;
+    transition: 4s.;
     aspect-ratio: 1/1;
     object-fit: contain;
     padding: 20px;
@@ -149,6 +149,26 @@ h6 {
     box-shadow: 0 5px 10px rgb(236, 236, 236);
 }
 
+.img-card {
+   
+}
+
+.body-text {
+    text-align: start;
+}
+
+.price {
+    text-align: center;
+    font-size: 30px;
+   
+}
+
+.rating {
+    font-size: 25px;
+}
+
+
+   
 
 
 
