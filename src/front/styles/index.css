@@ -107,7 +107,7 @@ html, body{
 
 .card-img {
     width: 100%;
-    transition: 4s;
+    transition: .1s;
     aspect-ratio: 1/1;
     object-fit: contain;
     padding: 20px;
