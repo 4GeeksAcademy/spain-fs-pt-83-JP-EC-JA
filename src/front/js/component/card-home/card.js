@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
 import { Context } from "../../store/appContext";
-import { TendenciaMen } from "../tendencia-home/tendenciaMen";
-import { TendenciaJewelery } from "../tendencia-home/tendenciaJewelery";
-
+import { AllCards } from "../allcards";
 
 export const Card = () => {
-    const { store } = useContext(Context);
+    const { store} = useContext(Context);
     return (
         <div className="container-fluid my-5 py-5 tendencia">
             <h4 className="text-uppercase text-center p-3">
@@ -27,14 +25,22 @@ export const Card = () => {
             <div className="tab-content text-center cartas-menu" id="myTabContent">
                 <div className="tab-pane fade show active" id="Jewelery-tab-pane" role="tabpanel" aria-labelledby="Jewelery-tab" tabindex="0">
                     <div className="row justify-content-center">
-                        <TendenciaJewelery />
+                        {
+                            store.jewelery.map(product => (
+                                <AllCards image={product.image} title={product.title} category={product.category} price={product.price} rate={product.rating.rate} id={product.id} />
+                            ))
+                        }
                     </div>
                 </div>
 
 
                 <div className="tab-pane fade" id="men-tab-pane" role="tabpanel" aria-labelledby="men-tab" tabindex="0">
                     <div className="row justify-content-center">
-                        <TendenciaMen />
+                        {
+                            store.men.map(product => (
+                                <AllCards image={product.image} title={product.title} category={product.category} price={product.price} rate={product.rating.rate} id={product.id} />
+                            ))
+                        }
                     </div>
                 </div>
 

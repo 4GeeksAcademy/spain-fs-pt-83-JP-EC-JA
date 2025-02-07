@@ -144,17 +144,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 
-			addFavorite: (id) => {
+			addFavorite: (product_id) => {
                 const favorites = getStore().favorites;
-                const newFavorites = [...favorites, id];
+                const newFavorites = [...favorites, product_id];
                 setStore({favorites: newFavorites})
             },
 
-			removeFavorite: (id) => {
+			removeFavorite: (product_id) => {
                 const favorites = getStore().favorites;
-                const newFavorites = favorites.filter(products => products != id)
+                const newFavorites = favorites.filter(products => products != product_id)
                 setStore({favorites: newFavorites})								
-            },
+            },			
 		}
 	};
 };
