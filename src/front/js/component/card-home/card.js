@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Context } from "../../store/appContext";
-import { TendenciaMen } from "../tendencia-home/tendenciaMen";
 import { AllCards } from "../allcards";
 
 export const Card = () => {
