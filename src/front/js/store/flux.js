@@ -7,8 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			jewelery: [],
 			woman: [],
 			electronics: [],
-			authToken: '',
-			favorites: [],
+			productdetail: null,
+            favorites: [],
 		},
 
 		actions: {
@@ -84,7 +84,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 
 				if (store.products.length === 0) {
-					fetch('https://fakestoreapi.com/products')
+					fetch('https://fakestoreapi.com/products/')
 						.then(res => res.json())
 						.then(respJson => {
 							const response = respJson;
@@ -132,7 +132,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-		    loadWomansClothes: () => {
+			loadWomansClothes: () => {
 				const store = getStore();
 
 				if (store.woman.length === 0) {
@@ -158,17 +158,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			addFavorite: (id) => {
+			loadProductDetail: (id) => {
+				fetch(`https://fakestoreapi.com/products/${id}`)
+					.then(res => res.json())
+					.then(respJson => {
+						const response = respJson;
+						setStore({ productdetail: response });
+					})
+
+			},
+
+			addFavorite: (product_id) => {
                 const favorites = getStore().favorites;
-                const newFavorites = [...favorites, id];
+                const newFavorites = [...favorites, product_id];
                 setStore({favorites: newFavorites})
             },
 
-			removeFavorite: (id) => {
+			removeFavorite: (product_id) => {
                 const favorites = getStore().favorites;
-                const newFavorites = favorites.filter(products => products != id)
+                const newFavorites = favorites.filter(products => products != product_id)
                 setStore({favorites: newFavorites})								
-            },
+            },			
 		}
 	};
 };
