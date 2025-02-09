@@ -35,6 +35,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 
+			handlerLogout: () => {
+				localStorage.removeItem("token"); // Elimina el token
+				setStore({ authToken: null, });
+			},
+
 			getUser: async()=>{
 				const token = localStorage.getItem('token');
 

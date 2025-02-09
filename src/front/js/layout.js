@@ -16,6 +16,7 @@ import { Favorites } from "./pages/favorites";
 
 import { Navbar } from "./component/navbar/navbar";
 import { Footer } from "./component/footer";
+import { SearchResults } from "./component/navbar/searchResult";
 
 
 //create your first component
@@ -40,6 +41,7 @@ const Layout = () => {
                         <Route element={<Electronics />} path="/electronics" />
                         <Route element={<ProductDetail />} path="/detail/:id" />
                         <Route element={<Favorites/>} path="/favorites"/>
+                        <Route element={<SearchResults/>} path="/search"/>
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
