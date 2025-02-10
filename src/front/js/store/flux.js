@@ -8,13 +8,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			woman: [],
 			electronics: [],
 			productdetail: null,
-<<<<<<< HEAD
-            favorites: [],
-			cart: [],
-=======
 			favorites: [],
-			user: [],
->>>>>>> main
+			cart: [],
+			user: null,
 		},
 
 		actions: {
@@ -67,6 +63,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (!response.ok) throw new Error("Error obteniendo usuario");
 
 					const userData = await response.json();
+					console.log(userData)
 
 					setStore({ user: userData }); // 🚀 Guardamos el usuario en el estado global
 					return userData;
@@ -204,6 +201,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const favorites = getStore().favorites;
 				const newFavorites = favorites.filter(products => products != product_id)
 				setStore({ favorites: newFavorites })
+			},
+
+			addCart: (product_id) => {
+				const cart = getStore().cart;
+				const newcart = [...cart, product_id];
+				setStore({ cart: newcart })
+			},
+
+			removeCart: (product_id) => {
+				const cart = getStore().cart;
+				const newcart = cart.filter(products => products != product_id)
+				setStore({ cart: newcart })
 			},
 		}
 	};

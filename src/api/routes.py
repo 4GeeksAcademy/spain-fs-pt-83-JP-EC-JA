@@ -17,26 +17,17 @@ CORS(api)
 #=================== Todos los usuarios ==============================
 
 @api.route('/user', methods=['GET'])
-
+@jwt_required()
 def handle_get_users():
 
-    all_users = User.query.all()
-    all_users = list(map(lambda x: x.serialize(), all_users))
+    current_user_email = get_jwt_identity()
+    user = User.query.filter_by(email=current_user_email).first()
 
-    if not all_users:
+    if not user:
         return jsonify({'msg' : 'No hay usuarios registrados'}), 404
 
-    return jsonify(all_users), 200
-
-#=================== encuentra el usuario por su ID ==================
-
-@api.route('/user/<int:id>', methods=['GET'])
-def handle_get_user(id):
-    
-    user = User.query.get(id)
-    if not user:
-        return jsonify({'msg': 'Usuario no encontrado'}), 404
     return jsonify(user.serialize()), 200
+
 
 #===================  Crear un usuario  ==============================
 

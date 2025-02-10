@@ -14,6 +14,7 @@ import injectContext from "./store/appContext";
 import { ProductDetail } from "./pages/productdetail";
 import { Favorites } from "./pages/favorites";
 import { Perfil } from "./pages/perfil";
+import { Cart } from "./pages/cart";
 
 
 import { Navbar } from "./component/navbar/navbar";
@@ -43,6 +44,7 @@ const Layout = () => {
                         <Route element={<Electronics />} path="/electronics" />
                         <Route element={<ProductDetail />} path="/detail/:id" />
                         <Route element={<Favorites/>} path="/favorites"/>
+                        <Route element={<Cart/>} path="/cart"/>
                         <Route element={<SearchResults/>} path="/search"/>
                         <Route element={<Perfil/>} path="/profile"/>
                         <Route element={<h1>Not found!</h1>} />
