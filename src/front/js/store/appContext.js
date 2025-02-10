@@ -28,7 +28,11 @@ const injectContext = PassedComponent => {
 			state.actions.loadTendenciaJewelery();
 			state.actions.loadElectronics();
 			state.actions.loadWomansClothes();
-			state.actions.loadProductDetail();			
+			state.actions.loadProductDetail();		
+			const token = localStorage.getItem('token')
+				if (token){
+					state.actions.getUser()
+				}	
 		}, []);
 
 		// The initial value for the context is not null anymore, but the current state of this component,
