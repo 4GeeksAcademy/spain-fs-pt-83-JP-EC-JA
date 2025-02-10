@@ -135,6 +135,27 @@ def handle_add_favorite():
         db.session.rollback()
         return jsonify({'msg': 'Error al agregar el favorito', 'error': str(e)}), 500
     
+#=================== eliminar favorito =============================
+@api.route('/favorite/<int:product_id>', methods=['DELETE'])
+@jwt_required()
+def handle_delete_favorite(product_id):
+    current_user_email = get_jwt_identity()
+    user = User.query.filter_by(email=current_user_email).first()
+    if not user:
+        return jsonify({'msg': 'User not authenticated'}), 401
+    favorite = Favorite.query.filter_by(product_id=product_id, user_id=user.id).first()
+    if not favorite:
+        return jsonify({'msg': 'Favorite not found'}), 404
+    try:
+        db.session.delete(favorite)
+        db.session.commit()
+        return jsonify({'msg': 'Favorito eliminado exitosamente'}), 200
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'msg': 'Error al eliminar el favorito', 'error': str(e)}), 500
+    
+
+    
 #==================== ingresa producto al cart =================
 
 @api.route('/cart/<int:id>', methods=['POST'])
