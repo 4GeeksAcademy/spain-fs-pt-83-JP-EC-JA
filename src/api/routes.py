@@ -65,6 +65,8 @@ def handler_create_user():
     email=body["email"]
 )
     new_user.set_password(body["password"])
+    if len(body['password']) < 8:
+        return jsonify({"error": "La contraseña debe tener más de 8 caracteres."}), 400
 
 
     try:
