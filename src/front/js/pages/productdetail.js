@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 
 
 
-export const ProductDetail = () => {
+export const ProductDetail = (product) => {
 
     const { store, actions } = useContext(Context);
     const params = useParams();
@@ -17,7 +17,7 @@ export const ProductDetail = () => {
 
     return (
 
-        <div className="detail-card m-5 p-5">
+        <div className="detail-card">
 
             <div className="img-fluid">
                 <img src={store.productdetail.image} className="card-img" alt="..."></img>
@@ -35,7 +35,9 @@ export const ProductDetail = () => {
                             <i onClick={() => actions.addFavorite(store.productdetail.id)} className="bi bi-heart"></i>
                     }
                 </Link>
-                <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
+                <Link to="#" className="btn btn-light btn-all">
+                    <i className="bi bi-cart3"></i>
+                </Link>
 
             </div>
 

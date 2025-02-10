@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+	
 	return (
 		<nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary shadow">
 			<div className="container-fluid">
@@ -40,7 +42,12 @@ export const Navbar = () => {
 						</li>
 						<li className="nav-item">
 							<a className="nav-link active" aria-current="page" href="#">
-								<i className="bi bi-heart"></i>								
+								<i className="bi bi-heart"></i>
+							</a>
+						</li>
+						<li className="dropdown">
+							<a className="nav-link active" aria-current="page" href="#">
+								<i className="bi bi-cart3"></i>
 							</a>
 						</li>
 						<li className="nav-item">

@@ -5,13 +5,13 @@ import { VistaModal } from "../component/navbar/FormModal";
 import { Link } from "react-router-dom";
 
 export const Favorites = () => {
-    const {store, actions} = useContext(Context);    
+    const { store, actions } = useContext(Context);
 
     return (
         <div className="card-container">
-            
-            {                
-                store.products.map(product => ( 
+
+            {
+                store.products.map(product => (
                     store.favorites.includes(product.id) ?
                         <div className="card-products col-3">
                             <img src={product.image} className="card-img" alt="..." />
@@ -26,8 +26,10 @@ export const Favorites = () => {
                                             <i onClick={() => actions.removeFavorite(product.id)} className="fa-solid fa-heart"></i> :
                                             <i onClick={() => actions.addFavorite(product.id)} className="bi bi-heart"></i>
                                     }
-                                </Link>                                                        
-                                <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
+                                </Link>
+                                <Link to="#" className="btn btn-light btn-all">
+                                    <i className="bi bi-cart3"></i>
+                                </Link>
                             </div>
                         </div> :
                         <></>

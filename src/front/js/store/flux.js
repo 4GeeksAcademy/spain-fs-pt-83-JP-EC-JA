@@ -9,6 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			electronics: [],
 			productdetail: null,
             favorites: [],
+			cart: [],
 		},
 
 		actions: {
@@ -178,7 +179,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                 const favorites = getStore().favorites;
                 const newFavorites = favorites.filter(products => products != product_id)
                 setStore({favorites: newFavorites})								
-            },			
+            },
+			
+			
 		}
 	};
 };
