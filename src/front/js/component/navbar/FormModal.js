@@ -46,7 +46,7 @@ export const VistaModal = ({ onSubmit}) => {
                         <div className={`container ${signUp ? 'active' : ''}`} id="container">
                             <div className={`form-container sign-up`}>
                                 <form>
-                                    <h1>Create Account</h1>
+                                    <h1>Create Account.</h1>
                                     <input name="username" type="text" placeholder="Username" value={username} onChange={(evt) => setUsername(evt.target.value)} />
                                     <input name="name" type="text" placeholder="Name" value={name} onChange={(evt) => setName(evt.target.value)} />
                                     <input name="lastname" type="text" placeholder="Lastname" value={lastname} onChange={(evt) => setLastname(evt.target.value)} />
