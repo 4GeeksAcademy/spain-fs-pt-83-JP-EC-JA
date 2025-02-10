@@ -17,28 +17,20 @@ CORS(api)
 #=================== Todos los usuarios ==============================
 
 @api.route('/user', methods=['GET'])
-
+@jwt_required()
 def handle_get_users():
 
-    all_users = User.query.all()
-    all_users = list(map(lambda x: x.serialize(), all_users))
+    current_user_email = get_jwt_identity()
+    user = User.query.filter_by(email=current_user_email).first()
 
-    if not all_users:
+    if not user:
         return jsonify({'msg' : 'No hay usuarios registrados'}), 404
 
-    return jsonify(all_users), 200
-
-#=================== encuentra el usuario por su ID ==================
-
-@api.route('/user/<int:id>', methods=['GET'])
-def handle_get_user(id):
-    
-    user = User.query.get(id)
-    if not user:
-        return jsonify({'msg': 'Usuario no encontrado'}), 404
     return jsonify(user.serialize()), 200
 
+
 #===================  Crear un usuario  ==============================
+
 
 @api.route('/user', methods=['POST'])
 def handler_create_user():
@@ -116,10 +108,14 @@ def handle_get_favorite(id):
     return jsonify(favorite.serialize()), 200
 
 #------------------Crear un Favorito------------------------------------------------------
+@api.route('/favorite', methods=['POST'])
+@jwt_required()
+def handle_add_favorite():
 
-@api.route('/favorite/<int:id>', methods=['POST'])
-def handle_add_favorite(id):
-
+    current_user_email = get_jwt_identity()
+    user = User.query.filter_by(email=current_user_email).first()
+    if user is None:
+        return jsonify({'msg': 'User not auth'}), 401
     body = request.get_json()
     print(body)
     
@@ -128,7 +124,7 @@ def handle_add_favorite(id):
 
     favorite = Favorite(
         product_id = body["product_id"],
-        user_id = id
+        user_id = user.id
     )
 
     try:
