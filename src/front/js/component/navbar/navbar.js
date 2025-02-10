@@ -3,10 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { ButtonModal } from "./buttonModal";
 
 export const Navbar = () => {
-	const [query, setQuery] = useState(""); // Estado para la búsqueda
-	const navigate = useNavigate(); // Para redirigir a otra página
+	const [query, setQuery] = useState("");
+	const navigate = useNavigate();
 
-	// Función para manejar la búsqueda
+	
 	const handleSearch = (e) => {
 		setQuery(e.target.value);
 		if (e.target.value.trim() !== "") {
@@ -25,7 +25,7 @@ export const Navbar = () => {
 					</button>
 					<div className="collapse navbar-collapse" id="navbarSupportedContent">
 
-						{/* FORMULARIO DE BÚSQUEDA */}
+						
 						<div className="col-md-6 offset-md-2 p-1">
 							<form className="d-flex" role="search" onSubmit={handleSearch}>
 								<input

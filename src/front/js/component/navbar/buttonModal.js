@@ -10,15 +10,21 @@ export const ButtonModal = () => {
     const token = localStorage.getItem("token");
 
     useEffect(() => {
-        if (token && !user) {
+        if (token) {
             actions.getUser().then(resp => setUser(resp));
+        } else {
+            setUser(null);
         }
-    }, [show]);
+    }, [token, show]);  // Ahora también se ejecuta cuando cambia `token`
+    
+    
+    
 
     const handleLogout = () => {
-        actions.handlerLogout(); // Llama a la función correcta
-        setUser(null);
-    };
+        actions.handlerLogout();
+        setUser(null); 
+        setShow(false); // Opcional, si quieres cerrar el modal después del logout
+    };    
 
     return (
         <>

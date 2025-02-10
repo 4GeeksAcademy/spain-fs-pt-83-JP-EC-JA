@@ -7,25 +7,32 @@ import { string } from "prop-types";
 
 export const VistaModal = ({ onSubmit}) => {
     const { actions, store } = useContext(Context);
-    const [signUp, setSignUp] = useState();
-    const [username, setUsername] = useState();
-    const [name, setName] = useState();
-    const [lastname, setLastname] = useState();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [signUp, setSignUp] = useState(false);
+    const [username, setUsername] = useState("");
+    const [name, setName] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-    const [emailLogin, setEmailLogin] = useState();
-    const [passwordLogin, setPasswordLogin] = useState();
+    const [emailLogin, setEmailLogin] = useState("");
+    const [passwordLogin, setPasswordLogin] = useState("");
 
-    const onSubmitRegister = (event) => {
+    const onSubmitRegister = async (event) => {
         event.preventDefault();
-        actions.handlerRegister({ username, name, lastname, email, password });
-        onSubmit()
-    };
+        
+        const response = await actions.handlerRegister({ username, name, lastname, email, password });
+        
+        if (response) {
+            alert("Registro exitoso, ahora inicia sesión");
+            onSubmit(); 
+        } else {
+            alert("Error al registrar usuario");
+        }
+    };    
     
     const onSubmitLogin = async (event) => {
         event.preventDefault();
-        console.log(event)
+
         await actions.handlerLogin({ email: emailLogin, password: passwordLogin });
         onSubmit()
     };
@@ -38,17 +45,17 @@ export const VistaModal = ({ onSubmit}) => {
                     <div className="modal-content border-0 bg-transparent">
                         <div className={`container ${signUp ? 'active' : ''}`} id="container">
                             <div className={`form-container sign-up`}>
-                                <form >
+                                <form>
                                     <h1>Create Account</h1>
-                                    <div className="social-icons">
-                                        <a href="#" className="icon shadow"><i className="fa-brands fa-google-plus-g"></i></a>
-                                    </div>
-                                    <span>or use your email for registeration</span>
                                     <input name="username" type="text" placeholder="Username" value={username} onChange={(evt) => setUsername(evt.target.value)} />
                                     <input name="name" type="text" placeholder="Name" value={name} onChange={(evt) => setName(evt.target.value)} />
                                     <input name="lastname" type="text" placeholder="Lastname" value={lastname} onChange={(evt) => setLastname(evt.target.value)} />
                                     <input name="email" type="email" placeholder="Email" value={email} onChange={(evt) => setEmail(evt.target.value)} />
                                     <input name="password" type="password" placeholder="Password" value={password} onChange={(evt) => setPassword(evt.target.value)} />
+                                    <span>or use your email for registeration</span>
+                                    <div className="social-icons">
+                                        <a href="#" className="icon shadow"><i className="fa-brands fa-google-plus-g"></i></a>
+                                    </div>
                                     <button onClick={onSubmitRegister} type="submit" className="shadow">Sign Up</button>
                                 </form>
                             </div>
