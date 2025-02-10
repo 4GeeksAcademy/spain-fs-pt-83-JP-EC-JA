@@ -31,6 +31,7 @@ def handle_get_users():
 
 #===================  Crear un usuario  ==============================
 
+
 @api.route('/user', methods=['POST'])
 def handler_create_user():
     
@@ -107,10 +108,14 @@ def handle_get_favorite(id):
     return jsonify(favorite.serialize()), 200
 
 #------------------Crear un Favorito------------------------------------------------------
+@api.route('/favorite', methods=['POST'])
+@jwt_required()
+def handle_add_favorite():
 
-@api.route('/favorite/<int:id>', methods=['POST'])
-def handle_add_favorite(id):
-
+    current_user_email = get_jwt_identity()
+    user = User.query.filter_by(email=current_user_email).first()
+    if user is None:
+        return jsonify({'msg': 'User not auth'}), 401
     body = request.get_json()
     print(body)
     
@@ -119,7 +124,7 @@ def handle_add_favorite(id):
 
     favorite = Favorite(
         product_id = body["product_id"],
-        user_id = id
+        user_id = user.id
     )
 
     try:

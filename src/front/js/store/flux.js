@@ -29,7 +29,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ authToken: authJson.token });
 					localStorage.setItem("token", authJson.token);
 
-
 					const user = await getActions().getUser();
 					setStore({ user });
 
@@ -64,8 +63,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					const userData = await response.json();
 					console.log(userData)
-
-					setStore({ user: userData }); // 🚀 Guardamos el usuario en el estado global
+					const userFavorite = userData.favorites.map(item=> item.product_id)
+					
+					setStore({ user: userData, favorites: userFavorite });
 					return userData;
 
 				} catch (error) {
@@ -191,10 +191,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 
-			addFavorite: (product_id) => {
-				const favorites = getStore().favorites;
-				const newFavorites = [...favorites, product_id];
-				setStore({ favorites: newFavorites })
+			addFavorite: async (product_id) => {
+				const token = localStorage.getItem('token')
+				fetch(`${process.env.BACKEND_URL}api/favorite`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': `Bearer ${token}`
+					},
+					body: JSON.stringify({ product_id })
+				}).then((res) => {
+					if (res.ok) {
+						const favorites = getStore().favorites;
+						const newFavorites = [...favorites, product_id];
+						setStore({ favorites: newFavorites })
+					}
+				})
+
 			},
 
 			removeFavorite: (product_id) => {
