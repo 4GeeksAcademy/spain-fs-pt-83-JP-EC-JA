@@ -135,7 +135,7 @@ def handle_add_favorite():
         db.session.rollback()
         return jsonify({'msg': 'Error al agregar el favorito', 'error': str(e)}), 500
     
-#==================== ingresa producto al cart ==================
+#==================== ingresa producto al cart =================
 
 @api.route('/cart/<int:id>', methods=['POST'])
 def handle_add_cart(id):
