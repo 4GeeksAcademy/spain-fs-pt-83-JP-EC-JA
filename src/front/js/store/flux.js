@@ -62,8 +62,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					const userData = await response.json();
 					console.log(userData)
-					const userFavorite = userData.favorites.map(item=> item.product_id)
-					
+					const userFavorite = userData.favorites.map(item => item.product_id)
+
 					setStore({ user: userData, favorites: userFavorite });
 					return userData;
 
@@ -209,10 +209,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 
-			removeFavorite: (product_id) => {
-				const favorites = getStore().favorites;
-				const newFavorites = favorites.filter(products => products != product_id)
-				setStore({ favorites: newFavorites })
+			removeFavorite: async (product_id) => {
+				const token = localStorage.getItem('token')
+				fetch(`${process.env.BACKEND_URL}api/favorite/${product_id}`, {
+					method: 'DELETE',
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': `Bearer ${token}`
+					},
+
+				}).then((resp) => {
+					if (resp.ok) {
+						const favorites = getStore().favorites;
+						const newFavorites = favorites.filter(products => products != product_id)
+						setStore({ favorites: newFavorites })
+
+					}
+				})
 			},
 		}
 	};
