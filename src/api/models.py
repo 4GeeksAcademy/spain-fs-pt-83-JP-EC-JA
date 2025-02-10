@@ -13,7 +13,6 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(256), nullable=False)
     favorites = db.relationship("Favorite", back_populates="user",cascade="all, delete-orphan")
-
     carts = db.relationship("Cart", back_populates="user",cascade="all, delete-orphan")
 
     def set_password(self, password):
@@ -64,12 +63,11 @@ class Cart (db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"), nullable=False)
     product_id = db.Column(db.Integer, nullable=False)
     amount = db.Column(db.Integer, nullable=False)
-
     user = db.relationship('User', back_populates="carts", uselist=False, single_parent=True)
-
+    
     def __repr__(self):
         return f'<Cart {self.id}: {self.product_id} {self.amount} - user {self.user_id}>'
-
+    
     def serialize(self):
         return{
             "id": self.id,
