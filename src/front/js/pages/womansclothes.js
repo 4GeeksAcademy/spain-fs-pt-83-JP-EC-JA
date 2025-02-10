@@ -9,7 +9,7 @@ export const WomanClothes = () => {
 
     return (
         <div className="card-container">
-            <VistaModal />
+            
             {
                 store.woman.map(product => (
                     <AllCards image={product.image} title={product.title} category={product.category} price={product.price} rate={product.rating.rate} id={product.id} />
