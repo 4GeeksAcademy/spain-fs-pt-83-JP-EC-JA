@@ -120,11 +120,9 @@ def handle_add_favorite(id):
 
     body = request.get_json()
     print(body)
-
     
     if "product_id" not in body:
-        return jsonify({'msg': f'Error: product_id no puede estar vacío'}), 400
-    
+        return jsonify({'msg': f'Error: product_id no puede estar vacío'}), 400    
 
     favorite = Favorite(
         product_id = body["product_id"],
@@ -138,8 +136,7 @@ def handle_add_favorite(id):
     except Exception as e:
         db.session.rollback()
         return jsonify({'msg': 'Error al agregar el favorito', 'error': str(e)}), 500
-
-
+    
 #==================== ingresa producto al cart ==================
 
 @api.route('/cart/<int:id>', methods=['POST'])
@@ -147,14 +144,16 @@ def handle_add_cart(id):
 
     body = request.get_json()
     print(body)
-
     
     if "product_id" not in body:
         return jsonify({'msg': f'Error: product_id no puede estar vacío'}), 400
+    if "amount" not in body:
+        return jsonify({'msg': f'Error: Debe indicarse la cantidad'}), 400
     
 
     cart = Cart(
         product_id = body["product_id"],
+        amount = body["amount"],
         user_id = id
     )
 
