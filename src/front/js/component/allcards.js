@@ -25,7 +25,11 @@ export const AllCards = ({ image, title, category, price, rate, id, }) => {
                     }
                 </Link>
                 <Link to="#" className="btn btn-light btn-all">
-                <i className="bi bi-cart3"></i>
+                    {
+                        store.cart.includes(id) ?
+                            <i onClick={() => actions.removeCart(id)} className="bi bi-cart3"></i> :
+                            <i onClick={() => actions.addCart(id)} className="bi bi-cart3"></i>
+                    }
                 </Link>
 
             </div>
