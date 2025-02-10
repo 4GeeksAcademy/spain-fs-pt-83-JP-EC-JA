@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import "../../styles/index.css";
 import { Context } from "../store/appContext";
-import { VistaModal } from "../component/navbar/FormModal";
 import { AllCards } from "../component/allcards";
 
 export const WomanClothes = () => {

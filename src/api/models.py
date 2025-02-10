@@ -12,6 +12,8 @@ class User(db.Model):
     lastname = db.Column(db.String(32), nullable=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(256), nullable=False)
+    favorites = db.relationship('Favorite', backref='user', lazy=True, cascade="all, delete-orphan")
+
 
     favorites = db.relationship("Favorite", back_populates="user",cascade="all, delete-orphan")
     carts = db.relationship("Cart", back_populates="user",cascade="all, delete-orphan")
@@ -34,6 +36,8 @@ class User(db.Model):
             "name": self.name,
             "lastname": self.lastname,
             "email": self.email,
+            "favorites": [fav.serialize() for fav in self.favorites]
+
         }
 
 class Favorite (db.Model):

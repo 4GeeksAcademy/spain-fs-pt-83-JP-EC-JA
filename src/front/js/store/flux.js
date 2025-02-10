@@ -8,78 +8,103 @@ const getState = ({ getStore, getActions, setStore }) => {
 			woman: [],
 			electronics: [],
 			productdetail: null,
+<<<<<<< HEAD
             favorites: [],
 			cart: [],
+=======
+			favorites: [],
+			user: [],
+>>>>>>> main
 		},
 
 		actions: {
 
-			handlerLogin: async(body)=>{
-				try{
-					const auth = await fetch (`${process.env.BACKEND_URL}api/auth`, {
+			handlerLogin: async (body) => {
+				try {
+					const auth = await fetch(`${process.env.BACKEND_URL}api/auth`, {
 						method: 'POST',
 						body: JSON.stringify(body),
-						headers: {
-							'Content-Type': 'application/json'
-						}
-					}) 
-					
-					if (!auth.ok) throw Error();
+						headers: { 'Content-Type': 'application/json' }
+					});
+
+					if (!auth.ok) throw new Error("Error en la autenticación");
 
 					const authJson = await auth.json();
-					setStore({ authToken: authJson.token })
-					localStorage.setItem( 'token', authJson.token)
-					console.log(authJson);
-				} catch {
-					console.log('Error')
-				}
+					setStore({ authToken: authJson.token });
+					localStorage.setItem("token", authJson.token);
 
+
+					const user = await getActions().getUser();
+					setStore({ user });
+
+					console.log("login:", user);
+
+				} catch (error) {
+					console.log("Error en login:", error);
+				}
 			},
 
-			getUser: async()=>{
-				const token = localStorage.getItem('token');
 
-				try{
-					const user = await fetch (`${process.env.BACKEND_URL}api/user`,
-						{
-							method: 'GET',
-							headers: {
-								'Content-Type': 'application/json',
-								'Authorization': `Bearer${token}`
-							}
+
+			handlerLogout: () => {
+				localStorage.removeItem("token"); // Elimina el token
+				setStore({ authToken: null, user: null }); // Limpia el usuario en el store
+			},
+
+
+			getUser: async () => {
+				const token = localStorage.getItem("token");
+
+				try {
+					const response = await fetch(`${process.env.BACKEND_URL}api/user`, {
+						method: "GET",
+						headers: {
+							"Content-Type": "application/json",
+							"Authorization": `Bearer ${token}`
 						}
-					)
+					});
 
-					if(!user.ok) return Throw('error get user')
-					const userData = await user.json();
-					console.log(userData);
-					return userData[0];
-				}
-				catch{
-					console.log('error')
+					if (!response.ok) throw new Error("Error obteniendo usuario");
+
+					const userData = await response.json();
+
+					setStore({ user: userData }); // 🚀 Guardamos el usuario en el estado global
+					return userData;
+
+				} catch (error) {
+					console.log("Error obteniendo usuario:", error);
+					return null;
 				}
 			},
+
+
 
 			handlerRegister: async (body) => {
-
-				try{
-					const register = await fetch (`${process.env.BACKEND_URL}api/user`, {
+				try {
+					const response = await fetch(`${process.env.BACKEND_URL}api/user`, {
 						method: 'POST',
 						body: JSON.stringify(body),
 						headers: {
 							'Content-Type': 'application/json'
 						}
-					}) 
-					
-					if (!register.ok) throw Error();
+					});
 
-					const registerJson = await register.json();
-					console.log(registerJson);
-				} catch {
-					console.log('Error')
+					if (!response.ok) {
+						const errorData = await response.json();
+						console.error("Error en el registro:", errorData);
+						return false;
+					}
+
+					const registerJson = await response.json();
+					console.log("Usuario registrado:", registerJson);
+					return true;
+
+				} catch (error) {
+					console.error("Error inesperado en el registro:", error);
+					return false;
 				}
-
 			},
+
 
 			loadShopAll: () => {
 				const store = getStore();
@@ -170,18 +195,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			addFavorite: (product_id) => {
-                const favorites = getStore().favorites;
-                const newFavorites = [...favorites, product_id];
-                setStore({favorites: newFavorites})
-            },
+				const favorites = getStore().favorites;
+				const newFavorites = [...favorites, product_id];
+				setStore({ favorites: newFavorites })
+			},
 
 			removeFavorite: (product_id) => {
-                const favorites = getStore().favorites;
-                const newFavorites = favorites.filter(products => products != product_id)
-                setStore({favorites: newFavorites})								
-            },
-			
-			
+				const favorites = getStore().favorites;
+				const newFavorites = favorites.filter(products => products != product_id)
+				setStore({ favorites: newFavorites })
+			},
 		}
 	};
 };

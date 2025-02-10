@@ -8,7 +8,7 @@
     overflow: hidden;
     width: 768px;
     max-width: 100%;
-    min-height: 480px;
+    min-height: 550px;
 }
 
 .container p{
@@ -30,7 +30,7 @@
 }
 
 .container button{
-    background-color: #fff7a4;
+    background-color: #ecd7fe;
     color: #000;
     font-size: 12px;
     padding: 10px 45px;
@@ -144,9 +144,9 @@
 }
 
 .toggle{
-    background-color: orange;
+    background-color: #ecd7fe;
     height: 100%;
-    background: linear-gradient(to right, #5b5c2d, #fff7a4, #5b5c2d);
+    background: linear-gradient(to right, #ecd7fe, #e6e5e5, #ecd7fe);
     color: #fff;
     position: relative;
     left: -100%;
