@@ -1,7 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
-
 db = SQLAlchemy()
 
 class User(db.Model):
@@ -16,14 +15,16 @@ class User(db.Model):
     favorites = db.relationship('Favorite', backref='user', lazy=True, cascade="all, delete-orphan")
 
 
+    favorites = db.relationship("Favorite", back_populates="user",cascade="all, delete-orphan")
+    carts = db.relationship("Cart", back_populates="user",cascade="all, delete-orphan")
+
     def set_password(self, password):
         """Genera un hash de la contraseña y la guarda"""
         self.password = generate_password_hash(password)
 
     def check_password(self, password):
         """Verifica si la contraseña ingresada es correcta"""
-        return check_password_hash(self.password, password)
-     
+        return check_password_hash(self.password, password)     
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -38,16 +39,15 @@ class User(db.Model):
             "favorites": [fav.serialize() for fav in self.favorites]
 
         }
-    
-
-    
 
 class Favorite (db.Model):
-    __tablename__ = 'favorites'
+    __tablename__ = 'favorite'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"), nullable=False)
     product_id = db.Column(db.Integer, nullable=False)
+
+    user = db.relationship('User', back_populates="favorites", uselist=False, single_parent=True)
 
     def __repr__(self):
         return f'<Favorite {self.id}: {self.product_id} - user {self.user_id}>'
@@ -58,20 +58,24 @@ class Favorite (db.Model):
             "user_id": self.user_id,
             "product_id": self.product_id
         }
-
+    
 class Cart (db.Model):
-    __tablename__ = 'cart'
+    __tablename__ = 'Cart'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"), nullable=False)
     product_id = db.Column(db.Integer, nullable=False)
+    amount = db.Column(db.Integer, nullable=False)
+
+    user = db.relationship('User', back_populates="carts", uselist=False, single_parent=True)
 
     def __repr__(self):
-        return f'<Favorite {self.id}: {self.product_id} - user {self.user_id}>'
+        return f'<Cart {self.id}: {self.product_id} {self.amount} - user {self.user_id}>'
 
     def serialize(self):
         return{
             "id": self.id,
             "user_id": self.user_id,
-            "product_id": self.product_id
+            "product_id": self.product_id,
+            "amount": self.amount
         }
