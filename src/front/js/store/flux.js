@@ -9,6 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			electronics: [],
 			productdetail: null,
 			favorites: [],
+			user: [],
 		},
 
 		actions: {

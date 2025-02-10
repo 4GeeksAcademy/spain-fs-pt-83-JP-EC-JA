@@ -15,7 +15,7 @@ export const ButtonModal = () => {
         } else {
             setUser(null);
         }
-    }, [token, show]);  // Ahora también se ejecuta cuando cambia `token`
+    }, [token, show]); 
     
     
     
