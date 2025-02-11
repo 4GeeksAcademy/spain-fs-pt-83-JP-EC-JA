@@ -229,16 +229,43 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 			},
 
-			addCart: (product_id) => {
-				const cart = getStore().cart;
-				const newcart = [...cart, product_id];
-				setStore({ cart: newcart })
+			addCart: async (product_id) => {
+				const token = localStorage.getItem('token')
+				fetch(`${process.env.BACKEND_URL}api/cart`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': `Bearer ${token}`
+					},
+					body: JSON.stringify({ product_id })
+				}).then((res) => {
+					if (res.ok) {
+						const cart = getStore().cart;
+						const newCart = [...cart, product_id];
+						setStore({ cart: newCart })
+					}
+				})
+
 			},
 
-			removeCart: (product_id) => {
-				const cart = getStore().cart;
-				const newcart = cart.filter(products => products != product_id)
-				setStore({ cart: newcart })
+
+			removeCart: async (product_id) => {
+				const token = localStorage.getItem('token')
+				fetch(`${process.env.BACKEND_URL}api/cart/${product_id}`, {
+					method: 'DELETE',
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': `Bearer ${token}`
+					},
+
+				}).then((resp) => {
+					if (resp.ok) {
+						const cart = getStore().cart;
+						const newCart = cart.filter(products => products != product_id)
+						setStore({ cart: newCart })
+
+					}
+				})
 			},
 		}
 	};

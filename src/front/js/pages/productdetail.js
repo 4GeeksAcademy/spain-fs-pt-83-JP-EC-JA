@@ -36,7 +36,12 @@ export const ProductDetail = (product) => {
                     }
                 </Link>
                 <Link to="#" className="btn btn-light btn-all">
-                    <i className="bi bi-cart3"></i>
+                    {
+                        store.cart.includes(store.productdetail.id) ?
+                            <i onClick={() => actions.removeCart(store.productdetail.id)} className="fa-solid fa-cart3"></i> :
+                            <i onClick={() => actions.addCart(store.productdetail.id)} className="bi bi-cart3"></i>
+                    }
+
                 </Link>
 
             </div>
