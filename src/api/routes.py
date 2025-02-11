@@ -163,6 +163,34 @@ def handle_get_cart(id):
         return jsonify({'msg': 'Producto en el carrito no encontrado'}), 404
     return jsonify(cart.serialize()), 200
     
+#==================== ingresa producto al cart =================
+
+@api.route('/cart/<int:id>', methods=['POST'])
+def handle_add_cart(id):
+
+    body = request.get_json()
+    print(body)
+    
+    if "product_id" not in body:
+        return jsonify({'msg': f'Error: product_id no puede estar vacío'}), 400
+    if "amount" not in body:
+        return jsonify({'msg': f'Error: Debe indicarse la cantidad'}), 400
+    
+
+    cart = Cart(
+        product_id = body["product_id"],
+        amount = body["amount"],
+        user_id = id
+    )
+
+    try:
+        db.session.add(cart)
+        db.session.commit()
+        return jsonify({'msg': 'Favorito creado exitosamente'}), 201
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'msg': 'Error al agregar el favorito', 'error': str(e)}), 500
+
 #----------------------------Crear Cart ---------------------------
 
 @api.route('/cart', methods=['POST'])
