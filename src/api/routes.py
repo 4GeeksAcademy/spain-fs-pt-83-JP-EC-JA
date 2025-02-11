@@ -163,8 +163,6 @@ def handle_get_cart(id):
         return jsonify({'msg': 'Producto en el carrito no encontrado'}), 404
     return jsonify(cart.serialize()), 200
     
-
-
 #----------------------------Crear Cart ---------------------------
 
 @api.route('/cart', methods=['POST'])
