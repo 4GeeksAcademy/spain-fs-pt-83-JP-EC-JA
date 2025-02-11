@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ButtonModal } from "./buttonModal";
+import { Context } from "../../store/appContext";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
 	const [query, setQuery] = useState("");
 	const navigate = useNavigate();
 
-	
+
 	const handleSearch = (e) => {
 		setQuery(e.target.value);
 		if (e.target.value.trim() !== "") {
@@ -19,13 +21,13 @@ export const Navbar = () => {
 		<>
 			<nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary shadow">
 				<div className="container-fluid">
-					<Link className="navbar-brand" to="/">Chic & Click</Link>
+					<Link className="navbar-brand ms-4" to="/">Chic & Click</Link>
 					<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
 					</button>
 					<div className="collapse navbar-collapse" id="navbarSupportedContent">
 
-						
+
 						<div className="col-md-6 offset-md-2 p-1">
 							<form className="d-flex" role="search" onSubmit={handleSearch}>
 								<input
@@ -41,7 +43,7 @@ export const Navbar = () => {
 							</form>
 						</div>
 
-						<ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+						<ul className="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
 							<li className="nav-item dropdown">
 								<a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									CATEGORIA
@@ -59,14 +61,24 @@ export const Navbar = () => {
 								<ButtonModal />
 							</li>
 							<li className="nav-item">
-								<Link className="nav-link active" to="/favorites">
-									<i className="bi bi-heart"></i>
-								</Link>
+								<button onClick={() => navigate("/favorites")} className="nav-link active position-relative" aria-current="page" >
+									<i className=" bi bi-heart"></i>
+									{
+										store.favorites.length === 0 ? ("") : (
+											<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-black">
+												{(store.favorites.length)}
+											</span>
+										)
+									}
+								</button>
 							</li>
 							<li className="nav-item">
-								<a className="nav-link active" aria-current="page" href="#">
-									<i className="bi bi-cart3"></i>
-								</a>
+								<button onClick={() => navigate("/")} className="nav-link active position-relative" aria-current="page" >
+									<i className=" bi bi-cart3"></i>
+									<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-black">
+										
+									</span>
+								</button>
 							</li>
 						</ul>
 					</div>

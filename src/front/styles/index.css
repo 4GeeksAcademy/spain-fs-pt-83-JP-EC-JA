@@ -10,6 +10,27 @@ html, body{
     height: 40rem;
 }
 
+nav span{
+    background-color: #ecd7fe;
+    border: 1px solid #b4b4b4;
+    color: black;
+}
+
+.tendencia h4{
+    margin: auto;
+    width: 20ch;
+    text-wrap: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(20) infinite
+    alternate-reverse;
+}
+
+@keyframes typing {
+    from{
+        width: 0ch ;
+    }
+}
+
 .footer i{
     padding: 10px;
     font-size: 20px;
