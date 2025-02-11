@@ -207,7 +207,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ favorites: newFavorites })
 					}
 				})
-
 			},
 
 			removeFavorite: async (product_id) => {
