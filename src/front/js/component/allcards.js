@@ -11,10 +11,12 @@ export const AllCards = ({ image, title, category, price, rate, id }) => {
     return (
 
 
-        <div className="card border-1 shadow px-5 py-2 text-center">
+        <div className="card border-1 shadow py-2 text-center">
             <img src={image} className="card-img-top" alt="imagenes de los productos" />
             <div className="card-body p-0 m-0">
-                <h5 className="card-title">{title}</h5>
+                <div>
+                    <h5 className="cards-titles">{title}</h5>
+                </div>                
                 <p>{category}</p>
                 <p>{price}€</p>
                 <h6>{rate}</h6>
