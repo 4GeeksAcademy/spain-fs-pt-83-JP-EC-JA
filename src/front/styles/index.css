@@ -38,16 +38,27 @@ nav span{
 
 .card{
     width: 18rem;
-    margin: 40px auto;
+    margin: 30px;
     
 }
+
+.card .card-img-top{
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    transition: .1s;
+    aspect-ratio: 1/1;
+}
+
+.card .card-img-top:hover{
+    transform: translate(0px, -6px);
+}
+
+
 .cartas-menu button{
     margin: 0 .25rem;
 }
 
-.prduct-title{
-    min-height: 7rem;
-}
 
 .carrusel{
     overflow: hidden;
@@ -77,9 +88,9 @@ nav span{
 }
 
 .categoria{
-    /*background-color: #f5f5f5;*/
     grid: 20px;
 }
+
 
 .categoria img {
     width: 200px;
@@ -118,34 +129,7 @@ nav span{
     overflow: hidden;
 }
 
-.card-products {
-    width: 18rem;
-    margin: 30px;
-    box-sizing: border-box;
-    text-align: center;
-    border-radius: 10px;
-    border: solid rgb(223, 223, 223) 3px;
-    border-width: 1px;
-    padding-top: 10px;
-    box-shadow: 0 5px 10px rgb(236, 236, 236);
-}
 
-.card-img {
-    width: 100%;
-    transition: .1s;
-    aspect-ratio: 1/1;
-    object-fit: contain;
-    padding: 20px;
-}
-
-.card-img:hover {
-   transform: translate(0px, -6px);
-}
-
-.card-Shop {
-    padding: 20px 15px;
-    text-align: center;
-}
 
 h6 {
    margin: 20px;
@@ -186,6 +170,12 @@ h6 {
 .img-card {
    width: 100%;
    text-align: center;
+   padding: 50px 0;
+}
+
+.img-card img{
+    width: 20em;
+    height: 400px;
 }
 
 .body-text {

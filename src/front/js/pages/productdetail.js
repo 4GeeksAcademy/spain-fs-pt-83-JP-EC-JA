@@ -16,7 +16,7 @@ export const ProductDetail = (product) => {
     if (!store.productdetail) return null;
 
     return (
-        <div className="detail-card m-5 p-5">
+        <div className="detail-card">
             <div className="img-card">
                 <img src={store.productdetail.image} className="card-img" alt="..."></img>
             </div>
