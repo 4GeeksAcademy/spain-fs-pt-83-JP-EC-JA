@@ -24,6 +24,10 @@ html, body{
     margin: 0 .25rem;
 }
 
+.prduct-title{
+    min-height: 7rem;
+}
+
 .carrusel{
     overflow: hidden;
     width: 100%;
