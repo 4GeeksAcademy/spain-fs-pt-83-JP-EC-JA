@@ -12,7 +12,11 @@ export const AllCards = ({ image, title, category, price, rate, id, }) => {
         <div className="card-products col-3">
             <img src={image} className="card-img" alt="..." />
             <div className="card-Shop">
+<<<<<<< HEAD
                 <div className="cards-title">
+=======
+                <div className="prduct-title">
+>>>>>>> 9234643 (a)
                     <h5 className="card-title">{title}</h5>
                 </div>                
                 <p>{category}</p>
