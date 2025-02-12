@@ -20,7 +20,7 @@ export const AllCards = ({ image, title, category, price, rate, id }) => {
                 <h6>{rate}</h6>
             </div>
             <div className="card-footer bg-white border-0">
-                <Link className="btn btn-light" to={`/detail/${id}`}>More info</Link>
+                <Link className="btn btn-light" to={`/detail/${id}`}>More info.</Link>
                 <Link to='' className="btn btn-light">
                     {
                         store.favorites.includes(id) ?
