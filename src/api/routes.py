@@ -6,6 +6,7 @@ from flask_jwt_extended import jwt_required, get_jwt_identity, create_access_tok
 from werkzeug.security import generate_password_hash, check_password_hash
 from api.models import db, User, Favorite, Cart
 from api.utils import generate_sitemap, APIException
+from datetime import timedelta
 from flask_cors import CORS
 
 
@@ -82,7 +83,7 @@ def handler_auth():
     if not user or not user.check_password(body['password']):
         return jsonify({'msg': 'Error: Usuario o contraseña incorrectos'}), 401
     
-    token = create_access_token(identity=user.email)
+    token = create_access_token(identity=user.email, expires_delta=timedelta(hours=4))
 
     return jsonify({'msg': 'Inicio de sesión exitoso', 'token': token, 'user_id': user.id}), 200
 

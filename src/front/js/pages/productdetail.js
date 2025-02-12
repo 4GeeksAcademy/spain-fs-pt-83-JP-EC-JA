@@ -25,7 +25,7 @@ export const ProductDetail = (product) => {
                 <p>{store.productdetail.description}</p>
                 <strong className="price">{store.productdetail.price}€</strong>
                 <h5 className="rating">{store.productdetail.rating.rate}</h5>
-                <input type="number" className="number" min="0" max="100" placeholder="0" />
+                
                 <Link to="#" className="btn btn-light btn-all">
                     {
                         store.favorites.includes(store.productdetail.id) ?
