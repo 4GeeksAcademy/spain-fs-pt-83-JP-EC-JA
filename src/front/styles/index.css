@@ -17,8 +17,8 @@ nav span{
 }
 
 .tendencia h4{
-    margin: auto;
     width: 20ch;
+    margin: auto;
     text-wrap: nowrap;
     overflow: hidden;
     animation: typing 2s steps(20) infinite
