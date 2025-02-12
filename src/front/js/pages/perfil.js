@@ -12,20 +12,35 @@ export const Perfil = () => {
     }
 
     return (
-        <div className="perfil text-center border border-1 rounded-4 shadow">
-            <h2 className="text-center">Perfil del usuario</h2>
+        <div className="perfil col-6 border border-1 rounded-4 pb-5 shadow">
+            <h2 className="text-center py-4">Perfil del usuario</h2>
             <div className="container-fluid">
                 <div className="row">
                     <div className="col">
                         <img src={avatar} />
                     </div>
                     <div className="col">
-                        <h5 className="card-title">Nombre de Usuario: {user.username}</h5>
-                        <p className="card-text">Nombre: {user.name}</p>
-                        <p className="card-text">Apellido: {user.lastname}</p>
-                        <p className="card-text">Correo: {user.email}</p>
+                    <table class="table table-borderless table-hover text-uppercase">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Usuario</th>
+                                <td>{user.username}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Nombre</th>
+                                <td>{user.name}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Apellido</th>
+                                <td colspan="2">{user.lastname}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Correo</th>
+                                <td colspan="2">{user.email}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     </div>
-
                 </div>
             </div>
 

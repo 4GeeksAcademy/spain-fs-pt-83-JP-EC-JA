@@ -198,16 +198,16 @@ h6 {
 
 
 .perfil{
-    margin: 10% auto ;
-    padding: 5% ;
+    margin: 7% auto ;
     height: 40%;
-    width: 70%;
-    min-height: none;
-
 }   
 .perfil img{
     width: 80%;
     height: 200px;
+}
+
+.perfil h2{
+
 }
 .col-category{
     min-width: 17rem;
