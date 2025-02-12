@@ -17,24 +17,24 @@ export const Catergories = () => {
 
         <div className="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4">
 
-          <div className="col-categories">
+          <div className="col-category">
             <img src={electronics} />
             <h5 className="text-uppercase mt-5"><Link to='/electronics'className="btn btn-light px-5 border-0">electronics</Link></h5>
 
           </div>
 
-          <div className="col-categories">
+          <div className="col-category">
             <img src={jewelery} />
             <h5 className="text-uppercase mt-5"><Link to='/jewelery'className="btn btn-light px-5 border-0">jewelery</Link></h5>
 
           </div>
 
-          <div className="col-categories">
+          <div className="col-category">
             <img src={men} />
             <h5 className="text-uppercase mt-5"><Link to='/menclothes' className="btn btn-light px-5 border-0">men's clothing </Link></h5>
           </div>
 
-          <div className="col-categories">
+          <div className="col-category">
             <img src={women} />
             <h5 className="text-uppercase mt-5"><Link to='/womanclothes' className="btn btn-light px-5 border-0">women's clothing</Link></h5>
           </div>

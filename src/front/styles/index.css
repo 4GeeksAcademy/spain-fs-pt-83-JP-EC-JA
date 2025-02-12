@@ -51,6 +51,10 @@ nav span{
     aspect-ratio: 1/1;
 }
 
+.cards-titles{
+    min-height: 6rem;
+}
+
 .card .card-img-top:hover{
     transform: translate(0px, -6px);
 }
@@ -205,6 +209,12 @@ h6 {
     width: 80%;
     height: 200px;
 }
+.col-category{
+    min-width: 17rem;
+    padding: 1rem;
+}
+   
+
 
 
 
