@@ -37,7 +37,6 @@ export const Navbar = () => {
 									aria-label="Search"
 									value={query}
 									onChange={handleSearch}
-
 								/>
 								<button className="btn btn-light" type="submit">Search</button>
 							</form>
@@ -45,9 +44,9 @@ export const Navbar = () => {
 
 						<ul className="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
 							<li className="nav-item dropdown">
-								<a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<Link className="nav-link dropdown-toggle" to="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									CATEGORIA
-								</a>
+								</Link>
 								<ul className="dropdown-menu">
 									<li><Link className="dropdown-item" to="/">Home</Link></li>
 									<li><Link className="dropdown-item" to="/shopAll">Shop All</Link></li>

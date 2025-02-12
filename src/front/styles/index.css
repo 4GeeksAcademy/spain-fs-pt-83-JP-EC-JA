@@ -6,8 +6,8 @@ html, body{
 }
 
 .jumbo img{
-    width: 100vw;
-    height: 40rem;
+    max-width: 100%;
+    max-height: 40rem;
 }
 
 nav span{
@@ -32,8 +32,8 @@ nav span{
 }
 
 .footer i{
-    padding: 10px;
-    font-size: 20px;
+    padding: 0.6rem;
+    font-size: 1.3rem,;
 }
 
 .card{
@@ -45,10 +45,14 @@ nav span{
     margin: 0 .25rem;
 }
 
+.prduct-title{
+    min-height: 7rem;
+}
+
 .carrusel{
     overflow: hidden;
     width: 100%;
-    margin-top: 150px;
+    margin-top: 9rem;
 }
 
 .wrap {
