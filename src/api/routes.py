@@ -154,32 +154,61 @@ def handle_delete_favorite(product_id):
         db.session.rollback()
         return jsonify({'msg': 'Error al eliminar el favorito', 'error': str(e)}), 500
     
+#======================== encontrar producto en el carrito por id ==========================0
 
+@api.route('/cart/<int:id>', methods=['GET'])
+def handle_get_cart(id):
+    cart = Cart.query.get(id)
+    if not cart:
+        return jsonify({'msg': 'Producto en el carrito no encontrado'}), 404
+    return jsonify(cart.serialize()), 200
     
-#==================== ingresa producto al cart =================
+#----------------------------Crear Cart ---------------------------
 
-@api.route('/cart/<int:id>', methods=['POST'])
-def handle_add_cart(id):
+@api.route('/cart', methods=['POST'])
+@jwt_required()
+def handle_add_cart():
 
+    current_user_email = get_jwt_identity()
+    user = User.query.filter_by(email=current_user_email).first()
+    if user is None:
+        return jsonify({'msg': 'User not auth'}), 401
     body = request.get_json()
     print(body)
     
     if "product_id" not in body:
-        return jsonify({'msg': f'Error: product_id no puede estar vacío'}), 400
-    if "amount" not in body:
-        return jsonify({'msg': f'Error: Debe indicarse la cantidad'}), 400
-    
+        return jsonify({'msg': f'Error: product_id no puede estar vacío'}), 400    
 
     cart = Cart(
         product_id = body["product_id"],
-        amount = body["amount"],
-        user_id = id
+        user_id = user.id
     )
 
     try:
         db.session.add(cart)
         db.session.commit()
-        return jsonify({'msg': 'Favorito creado exitosamente'}), 201
+        return jsonify({'msg': 'Carrito creado exitosamente'}), 201
     except Exception as e:
         db.session.rollback()
-        return jsonify({'msg': 'Error al agregar el favorito', 'error': str(e)}), 500
+        return jsonify({'msg': 'Error al agregar producto al Carrito', 'error': str(e)}), 500
+    
+#==================== eliminar carrito =============================
+
+@api.route('/cart/<int:product_id>', methods=['DELETE'])
+@jwt_required()
+def handle_delete_cart(product_id):
+
+    current_user_email = get_jwt_identity()
+    user = User.query.filter_by(email=current_user_email).first()
+    if not user:
+        return jsonify({'msg': 'User not authenticated'}), 401
+    cart = Cart.query.filter_by(product_id=product_id, user_id=user.id).first()
+    if not cart:
+        return jsonify({'msg': 'product in cart not found'}), 404
+    try:
+        db.session.delete(cart)
+        db.session.commit()
+        return jsonify({'msg': 'Carrito eliminado exitosamente'}), 200
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'msg': 'Error al eliminar el producto del carrito', 'error': str(e)}), 500

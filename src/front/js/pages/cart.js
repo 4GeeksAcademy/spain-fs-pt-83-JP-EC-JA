@@ -3,14 +3,14 @@ import "../../styles/index.css";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
-export const Favorites = () => {
+export const Cart = () => {
     const { store, actions } = useContext(Context);
 
     return (
         <div className="card-container">
-            <div className="row justify-content-center">
-            {                
-                store.products.map(product => ( 
+
+            {
+                store.products.map(product => (
                     store.favorites.includes(product.id) ?
                         <div className="card-products col-3">
                             <img src={product.image} className="card-img" alt="..." />
@@ -27,14 +27,17 @@ export const Favorites = () => {
                                     }
                                 </Link>
                                 <Link to="#" className="btn btn-light btn-all">
-                                    <i className="bi bi-cart3"></i>
+                                    {
+                                        store.cart.includes(store.productdetail.id) ?
+                                            <i onClick={() => actions.removeCart(store.productdetail.id)} className="fa-solid fa-cart3"></i> :
+                                            <i onClick={() => actions.addCart(store.productdetail.id)} className="bi bi-cart3"></i>
+                                    }
                                 </Link>
                             </div>
                         </div> :
                         <></>
                 ))
             }
-            </div>            
         </div>
     );
 }

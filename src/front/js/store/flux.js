@@ -9,6 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			electronics: [],
 			productdetail: null,
 			favorites: [],
+			cart: [],
 			user: null,
 		},
 
@@ -206,7 +207,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ favorites: newFavorites })
 					}
 				})
-
 			},
 
 			removeFavorite: async (product_id) => {
@@ -223,6 +223,45 @@ const getState = ({ getStore, getActions, setStore }) => {
 						const favorites = getStore().favorites;
 						const newFavorites = favorites.filter(products => products != product_id)
 						setStore({ favorites: newFavorites })
+
+					}
+				})
+			},
+
+			addCart: async (product_id) => {
+				const token = localStorage.getItem('token')
+				fetch(`${process.env.BACKEND_URL}api/cart`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': `Bearer ${token}`
+					},
+					body: JSON.stringify({ product_id })
+				}).then((res) => {
+					if (res.ok) {
+						const cart = getStore().cart;
+						const newCart = [...cart, product_id];
+						setStore({ cart: newCart })
+					}
+				})
+
+			},
+
+
+			removeCart: async (product_id) => {
+				const token = localStorage.getItem('token')
+				fetch(`${process.env.BACKEND_URL}api/cart/${product_id}`, {
+					method: 'DELETE',
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': `Bearer ${token}`
+					},
+
+				}).then((resp) => {
+					if (resp.ok) {
+						const cart = getStore().cart;
+						const newCart = cart.filter(products => products != product_id)
+						setStore({ cart: newCart })
 
 					}
 				})
