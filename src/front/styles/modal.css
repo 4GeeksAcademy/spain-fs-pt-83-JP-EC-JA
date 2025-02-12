@@ -191,7 +191,3 @@
 .container.active .toggle-right{
     transform: translateX(200%);
 }
-
-.container{
-    min-height: 410px;
-}
