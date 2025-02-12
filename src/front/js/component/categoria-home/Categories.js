@@ -19,24 +19,24 @@ export const Catergories = () => {
 
           <div className="col">
             <img src={electronics} />
-            <h5 className="text-uppercase mt-5"><Link to='/electronics'className="btn btn-outline-dark px-5 rounded-0">electronics</Link></h5>
+            <h5 className="text-uppercase mt-5"><Link to='/electronics'className="btn btn-outline-secondary px-5 border-0">electronics</Link></h5>
 
           </div>
 
           <div className="col">
             <img src={jewelery} />
-            <h5 className="text-uppercase mt-5"><Link to='/jewelry'className="btn btn-outline-dark px-5 rounded-0">jewelery</Link></h5>
+            <h5 className="text-uppercase mt-5"><Link to='/jewelry'className="btn btn-outline-secondary px-5 border-0">jewelery</Link></h5>
 
           </div>
 
           <div className="col">
             <img src={men} />
-            <h5 className="text-uppercase mt-5"><Link to='/menclothes' className="btn btn-outline-dark px-5 rounded-0">men's clothing </Link></h5>
+            <h5 className="text-uppercase mt-5"><Link to='/menclothes' className="btn btn-outline-secondary px-5 border-0">men's clothing </Link></h5>
           </div>
 
           <div className="col">
             <img src={women} />
-            <h5 className="text-uppercase mt-5"><Link to='/womanclothes' className="btn btn-outline-dark px-5 rounded-0">women's clothing</Link></h5>
+            <h5 className="text-uppercase mt-5"><Link to='/womanclothes' className="btn btn-outline-secondary px-5 border-0">women's clothing</Link></h5>
           </div>
         </div>
       </div>
