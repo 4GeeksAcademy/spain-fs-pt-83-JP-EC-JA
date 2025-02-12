@@ -16,7 +16,7 @@ export const ProductDetail = (product) => {
     if (!store.productdetail) return null;
 
     return (
-        <div className="detail-card m-5 p-5">
+        <div className="detail-card">
             <div className="img-card">
                 <img src={store.productdetail.image} className="card-img" alt="..."></img>
             </div>
@@ -33,15 +33,7 @@ export const ProductDetail = (product) => {
                             <i onClick={() => actions.addFavorite(store.productdetail.id)} className="bi bi-heart"></i>
                     }
                 </Link>
-                <Link to="#" className="btn btn-light btn-all">
-                    {
-                        store.cart.includes(store.productdetail.id) ?
-                            <i onClick={() => actions.removeCart(store.productdetail.id)} className="fa-solid fa-cart3"></i> :
-                            <i onClick={() => actions.addCart(store.productdetail.id)} className="bi bi-cart3"></i>
-                    }
-
-                </Link>
-
+                <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
             </div>
         </div>
     )
