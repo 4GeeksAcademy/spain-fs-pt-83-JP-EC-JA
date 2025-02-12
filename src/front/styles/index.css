@@ -10,6 +10,7 @@ html, body{
     max-height: 40rem;
 }
 
+
 nav span{
     background-color: #ecd7fe;
     border: 1px solid #b4b4b4;
@@ -192,8 +193,18 @@ h6 {
 }
 
 
-   
+.perfil{
+    margin: 10% auto ;
+    padding: 5% ;
+    height: 40%;
+    width: 70%;
+    min-height: none;
 
+}   
+.perfil img{
+    width: 80%;
+    height: 200px;
+}
 
 
 
