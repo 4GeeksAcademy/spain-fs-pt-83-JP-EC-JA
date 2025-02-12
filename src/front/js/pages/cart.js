@@ -19,8 +19,11 @@ export const Cart = () => {
                                 <p>{product.category}</p>
                                 <p>{product.rating.rate}</p>
                             </div>
-                            <div className="card-footer bg-white border-0">
+                            <div className="card-footer d-flex bg-white border-0">
                                 <Link className="btn btn-light" to={`/detail/${product.id}`}>More info</Link>
+                                <Link className="btn btn-light" to="/">
+                                    <i onClick={() => actions.addFavorite(id)} className="bi bi-heart"></i>
+                                </Link>
                                 <button className="btn btn-light btn-all" onClick={() => actions.removeCart(product.id)}>
                                     <i className="bi bi-cart3"></i>
                                 </button>
