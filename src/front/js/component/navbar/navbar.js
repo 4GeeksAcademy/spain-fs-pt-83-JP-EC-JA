@@ -72,11 +72,17 @@ export const Navbar = () => {
 								</button>
 							</li>
 							<li className="nav-item">
-								<button onClick={() => navigate("/")} className="nav-link active position-relative" aria-current="page" >
+								<button onClick={() => navigate("/cart")} className="nav-link active position-relative" aria-current="page" >
 									<i className=" bi bi-cart3"></i>
-									<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-black">
-										
-									</span>
+									
+									{
+										store.cart.length === 0 ? ("") : (
+											<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-black">
+												{(store.cart.length)}
+											</span>
+										)
+									}
+									
 								</button>
 							</li>
 						</ul>

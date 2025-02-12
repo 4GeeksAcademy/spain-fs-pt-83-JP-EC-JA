@@ -27,6 +27,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					const authJson = await auth.json();
 					setStore({ authToken: authJson.token });
+					console.log(authJson)
 					localStorage.setItem("token", authJson.token);
 
 					const user = await getActions().getUser();
@@ -43,7 +44,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			handlerLogout: () => {
 				localStorage.removeItem("token"); // Elimina el token
-				setStore({ authToken: null, user: null }); // Limpia el usuario en el store
+				setStore({ authToken: null, user: null, favorites: [], cart: []}); // Limpia el usuario en el store
 			},
 
 
@@ -64,8 +65,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const userData = await response.json();
 					console.log(userData)
 					const userFavorite = userData.favorites.map(item => item.product_id)
+					const userCart = userData.cart.map(item => item.product_id)
 
-					setStore({ user: userData, favorites: userFavorite });
+					setStore({ user: userData, favorites: userFavorite, cart: userCart});
 					return userData;
 
 				} catch (error) {
@@ -73,7 +75,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return null;
 				}
 			},
-
 
 
 			handlerRegister: async (body) => {

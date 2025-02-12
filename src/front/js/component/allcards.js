@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export const AllCards = ({ image, title, category, price, rate, id }) => {
 
     const { store, actions } = useContext(Context);
-
+    console.log(store)
     return (
 
 
@@ -28,7 +28,13 @@ export const AllCards = ({ image, title, category, price, rate, id }) => {
                             <i onClick={() => actions.addFavorite(id)} className="bi bi-heart"></i>
                     }
                 </Link>
-                <Link to='' className="btn btn-light"><i className="bi bi-cart3"></i></Link>
+                <Link to='' className="btn btn-light">
+                    {
+                        store.cart.includes(id) ?
+                            <i onClick={() => actions.removeCart(id)} className="bi bi-cart-fill"></i> :
+                            <i onClick={() => actions.addCart(id)} className="bi bi-cart3"></i>
+                    }
+                </Link>
             </div>
         </div>
     )
