@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import "../../../styles/modal.css";
 import { Context } from "../../store/appContext";
-import { string } from "prop-types";
 
 
 
