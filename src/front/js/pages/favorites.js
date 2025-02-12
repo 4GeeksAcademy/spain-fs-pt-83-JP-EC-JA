@@ -8,15 +8,9 @@ export const Favorites = () => {
 
     return (
         <div className="card-container">
-<<<<<<< HEAD
-
-            {
-                store.products.map(product => (
-=======
             <div className="row justify-content-center">
             {                
                 store.products.map(product => ( 
->>>>>>> main
                     store.favorites.includes(product.id) ?
                         <div className="card-products col-3">
                             <img src={product.image} className="card-img" alt="..." />

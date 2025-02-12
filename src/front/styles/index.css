@@ -24,8 +24,8 @@ html, body{
     margin: 0 .25rem;
 }
 
-.prduct-title{
-    min-height: 7rem;
+.cards-title{
+    min-height: 6rem;
 }
 
 .carrusel{
@@ -173,12 +173,16 @@ h6 {
 
 .price {
     text-align: center;
-    font-size: 30px;
-   
+    font-size: 30px;   
 }
 
 .rating {
     font-size: 25px;
+}
+
+.col-categories{
+    min-width: 17rem;
+    padding: 1rem;
 }
 
 
