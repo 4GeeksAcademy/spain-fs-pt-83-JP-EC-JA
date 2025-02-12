@@ -24,6 +24,10 @@ html, body{
     margin: 0 .25rem;
 }
 
+.cards-title{
+    min-height: 6rem;
+}
+
 .carrusel{
     overflow: hidden;
     width: 100%;
@@ -177,7 +181,10 @@ h6 {
     font-size: 25px;
 }
 
-
+.col-category{
+    min-width: 17rem;
+    padding: 1rem;
+}
    
 
 
