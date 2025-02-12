@@ -27,8 +27,7 @@ const injectContext = PassedComponent => {
 			state.actions.loadTendenciaMen();
 			state.actions.loadTendenciaJewelery();
 			state.actions.loadElectronics();
-			state.actions.loadWomansClothes();
-			state.actions.loadProductDetail();		
+			state.actions.loadWomansClothes();		
 			const token = localStorage.getItem('token')
 				if (token){
 					state.actions.getUser()

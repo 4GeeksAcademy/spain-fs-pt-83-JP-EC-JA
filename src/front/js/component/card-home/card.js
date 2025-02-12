@@ -6,8 +6,8 @@ export const Card = () => {
     const { store} = useContext(Context);
     return (
         <div className="container-fluid my-5 py-5 tendencia">
-            <h4 className="text-uppercase text-center p-3">
-                Ultimas Tendencias
+            <h4 className="text-uppercase p-3">
+                Ultimas Tendencias...
             </h4>
             <ul className="nav justify-content-center nav-underline" id="myTab" role="tablist">
                 <li className="nav-item" role="presentation">
