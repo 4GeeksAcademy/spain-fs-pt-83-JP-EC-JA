@@ -34,7 +34,6 @@ class User(db.Model):
             "lastname": self.lastname,
             "email": self.email,
             "favorites": [fav.serialize() for fav in self.favorites]
-
         }
 
 class Favorite (db.Model):
@@ -43,7 +42,6 @@ class Favorite (db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"), nullable=False)
     product_id = db.Column(db.Integer, nullable=False)
-
     user = db.relationship('User', back_populates="favorites", uselist=False, single_parent=True)
 
     def __repr__(self):
@@ -62,7 +60,6 @@ class Cart (db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete="CASCADE"), nullable=False)
     product_id = db.Column(db.Integer, nullable=False)
-    amount = db.Column(db.Integer, nullable=False)
     user = db.relationship('User', back_populates="carts", uselist=False, single_parent=True)
     
     def __repr__(self):
@@ -72,6 +69,5 @@ class Cart (db.Model):
         return{
             "id": self.id,
             "user_id": self.user_id,
-            "product_id": self.product_id,
-            "amount": self.amount
+            "product_id": self.product_id
         }
