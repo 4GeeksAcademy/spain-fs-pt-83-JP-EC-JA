@@ -51,10 +51,6 @@ export const VistaModal = ({ onSubmit}) => {
                                     <input name="lastname" type="text" placeholder="Lastname" value={lastname} onChange={(evt) => setLastname(evt.target.value)} />
                                     <input name="email" type="email" placeholder="Email" value={email} onChange={(evt) => setEmail(evt.target.value)} />
                                     <input name="password" type="password" placeholder="Password" value={password} onChange={(evt) => setPassword(evt.target.value)} />
-                                    <span>or use your email for registeration</span>
-                                    <div className="social-icons">
-                                        <a href="#" className="icon shadow"><i className="fa-brands fa-google-plus-g"></i></a>
-                                    </div>
                                     <button onClick={onSubmitRegister} type="submit" className="shadow">Sign Up</button>
                                 </form>
                             </div>
@@ -65,9 +61,6 @@ export const VistaModal = ({ onSubmit}) => {
                                     <h1>Sign In</h1>
                                     <input name="email" type="email" placeholder="Email" value={emailLogin} onChange={(evt) => setEmailLogin(evt.target.value)}/>
                                     <input name="password" type="password" placeholder="Password" value={passwordLogin} onChange={(evt) => setPasswordLogin(evt.target.value)} />
-                                    <div className="social-icons">
-                                        <a href="#" className="icon shadow"><i className="fa-brands fa-google-plus-g"></i></a>
-                                    </div>
                                     <button type="submit" className="shadow">Sign In</button>
                                 </form>
                             </div>
