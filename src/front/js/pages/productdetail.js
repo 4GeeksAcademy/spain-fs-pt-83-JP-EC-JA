@@ -16,9 +16,7 @@ export const ProductDetail = () => {
     if (!store.productdetail) return null;
 
     return (
-
         <div className="detail-card m-5 p-5">
-
             <div className="img-card">
                 <img src={store.productdetail.image} className="card-img" alt="..."></img>
             </div>
@@ -36,12 +34,7 @@ export const ProductDetail = () => {
                     }
                 </Link>
                 <a href="#" className="btn btn-light btn-all"><i className="bi bi-cart3"></i></a>
-
             </div>
-
-
-
-
         </div>
     )
 }

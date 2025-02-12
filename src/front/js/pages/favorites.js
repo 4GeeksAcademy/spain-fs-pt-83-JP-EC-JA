@@ -8,7 +8,7 @@ export const Favorites = () => {
 
     return (
         <div className="card-container">
-            
+            <div className="row justify-content-center">
             {                
                 store.products.map(product => ( 
                     store.favorites.includes(product.id) ?
@@ -32,6 +32,7 @@ export const Favorites = () => {
                         <></>
                 ))
             }
+            </div>            
         </div>
     );
 }

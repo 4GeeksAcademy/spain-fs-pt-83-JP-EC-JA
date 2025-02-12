@@ -9,12 +9,13 @@ export const Electronics = () => {
 
     return (
         <div className="card-container">
-            
+            <div className="row justify-content-center">
             {
                 store.electronics.map(product => (
                     <AllCards image={product.image} title={product.title} category={product.category} price={product.price} rate={product.rating.rate} id={product.id} />
                 ))
             }
+            </div>            
         </div>
     )
 }
