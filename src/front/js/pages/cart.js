@@ -25,13 +25,13 @@ export const Cart = () => {
                                     <i onClick={() => actions.addFavorite(id)} className="bi bi-heart"></i>
                                 </Link>
                                 <button className="btn btn-light btn-all" onClick={() => actions.removeCart(product.id)}>
-                                    <i className="bi bi-cart3"></i>
+                                    <i class="bi bi-trash3"></i>
                                 </button>
                             </div>
                         </div>
                     ))
                 ) : (
-                    <div className="no-favorites">
+                    <div className="no-cart">
                         <p>Tu carrito está vacío</p>
                     </div>
                 )}
