@@ -12,7 +12,9 @@ export const AllCards = ({ image, title, category, price, rate, id, }) => {
         <div className="card-products col-3">
             <img src={image} className="card-img" alt="..." />
             <div className="card-Shop">
-                <h5 className="card-title">{title}</h5>
+                <div className="prduct-title">
+                    <h5 className="card-title">{title}</h5>
+                </div>                
                 <p>{category}</p>
                 <p>{price}€</p>
                 <h6>{rate}</h6>
