@@ -32,7 +32,7 @@ export const Cart = () => {
                     ))
                 ) : (
                     <div className="no-favorites">
-                        <p>Tu carrito está vacío.</p>
+                        <p>Tu carrito está vacío</p>
                     </div>
                 )}
             </div>
