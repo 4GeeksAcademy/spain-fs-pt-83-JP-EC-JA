@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const Cart = () => {
     const { store, actions } = useContext(Context);
     const cartProducts = store.products.filter(product => store.cart.includes(product.id));
-    const count=5;
+    const count = 5;
 
     return (
         <div className="cart-container-head text-center">
@@ -47,15 +47,15 @@ export const Cart = () => {
                                         <div className="col">
                                             <h3>{product.price}€</h3>
                                         </div>
-                                        <div className="col col-cart-count">                                            
-                                            <input type="number" name="count" min="1" max="99"/>                                           
+                                        <div className="col col-cart-count">
+                                            <input type="number" name="count" min="1" max="99" />
                                         </div>
                                         <div className="col">
                                             <h3>{count}</h3>
                                         </div>
                                         <div className="col">
                                             <button className="btn btn-light btn-all" onClick={() => actions.removeCart(product.id)}>
-                                                <i class="bi bi-trash3"></i>
+                                                <i className="bi bi-trash3"></i>
                                             </button>
                                         </div>
                                     </div>
