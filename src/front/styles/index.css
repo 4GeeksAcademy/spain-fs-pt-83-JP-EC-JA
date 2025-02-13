@@ -119,8 +119,6 @@ nav span{
     transform: translate(0px, -6px);
  }
 
-
-
 h6 {
    margin: 20px;
 }
@@ -143,17 +141,25 @@ h6 {
     opacity: 1;
 }
 
-.detail-card {
-    width: auto;
-    margin: 100px;
-    margin-bottom: 50px;
-    display: flex;
+.container-details{
+    margin: 7rem 2rem 3rem 2rem;
     justify-content: center;
-    border-radius: 10px;
-    border: solid rgb(236, 215, 254) 3px;
-    border-width: 1px;
+    border-radius: 0.5rem;
+    border: solid rgb(236, 215, 254) 1px;
     box-shadow: 0 5px 10px rgb(236, 236, 236);
-   }
+}
+
+.row-details{
+    margin: 1rem;
+    padding: 1rem;
+    align-items: center;
+    text-align: center;
+}
+
+.details-img{
+    max-width: 16rem;
+    max-height: 16rem;
+}
 
 .img-card {
    width: 100%;
@@ -212,10 +218,7 @@ h6 {
     min-height: 12rem;
     margin: 1rem;
     padding: 1rem;    
-    align-items: center;
-
-    
-
+    align-items: center; 
     border-radius: 10px;
     border: solid rgb(236, 215, 254) 1px;
     box-shadow: 0 5px 10px rgb(236, 236, 236);
@@ -233,4 +236,13 @@ h6 {
 
 .title-cart-img{
     padding: 1rem 2rem;
+}
+
+.col-cart-count{
+    align-items: center;
+}
+
+.cart-count{
+    min-width: 4rem;
+    min-height: 2rem;
 }
