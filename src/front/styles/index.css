@@ -16,6 +16,7 @@ nav span{
     color: black;
 }
 
+
 .tendencia h4{
     width: 20ch;
     margin: auto;
@@ -38,13 +39,13 @@ nav span{
 
 .card{
     width: 18rem;
-    margin: 30px;
+    margin: 2rem;
     
 }
 
 .card .card-img-top{
     width: 100%;
-    height: 200px;
+    height: 12rem;
     object-fit: contain;
     transition: .1s;
     aspect-ratio: 1/1;
@@ -215,7 +216,7 @@ h6 {
 }
 
 .row-cart-products{
-    min-height: 12rem;
+    min-height: 14rem;
     margin: 1rem;
     padding: 1rem;    
     align-items: center; 
@@ -229,9 +230,9 @@ h6 {
 }
 
 .cart-img{
-    max-width: 10rem;
-    max-height: 10rem;
-    padding-left: 2rem;
+    max-width: 12rem;
+    max-height: 12rem;
+    padding: 1rem;
 }
 
 .title-cart-img{
