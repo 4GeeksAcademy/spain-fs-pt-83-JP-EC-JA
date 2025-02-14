@@ -17,6 +17,7 @@ nav span{
     color: black;
 }
 
+
 .tendencia h4{
     width: 20ch;
     margin: auto;
@@ -39,13 +40,13 @@ nav span{
 
 .card{
     width: 18rem;
-    margin: 30px;
+    margin: 2rem;
     
 }
 
 .card .card-img-top{
     width: 100%;
-    height: 200px;
+    height: 12rem;
     object-fit: contain;
     transition: .1s;
     aspect-ratio: 1/1;
@@ -95,13 +96,11 @@ nav span{
     grid: 20px;
 }
 
-
 .categoria img {
     width: 200px;
     height: 200px;
     object-fit: contain;
 }
-
 
 .men img , .jewelery img{
     width: 200px;
@@ -122,24 +121,9 @@ nav span{
     transform: translate(0px, -6px);
  }
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    margin: 80px 0;
-    overflow: hidden;
-}
-
-
-
 h6 {
    margin: 20px;
 }
-
-
  
 .btn {
     margin: 2px;
@@ -159,17 +143,25 @@ h6 {
     opacity: 1;
 }
 
-.detail-card {
-    width: auto;
-    margin: 100px;
-    margin-bottom: 50px;
-    display: flex;
+.container-details{
+    margin: 7rem 2rem 3rem 2rem;
     justify-content: center;
-    border-radius: 10px;
-    border: solid rgb(223, 223, 223) 3px;
-    border-width: 1px;
+    border-radius: 0.5rem;
+    border: solid rgb(236, 215, 254) 1px;
     box-shadow: 0 5px 10px rgb(236, 236, 236);
-   }
+}
+
+.row-details{
+    margin: 1rem;
+    padding: 1rem;
+    align-items: center;
+    text-align: center;
+}
+
+.details-img{
+    max-width: 16rem;
+    max-height: 16rem;
+}
 
 .img-card {
    width: 100%;
@@ -213,19 +205,59 @@ h6 {
     min-width: 17rem;
     padding: 1rem;
 }
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 0;
+    overflow: hidden;
+}
    
+.cart-container-head{
+    margin-top: 7rem;
+}
 
+.row-cart-head {
+    margin:3rem 2rem 2rem 3rem ;
+}
 
+.cart-container-products{
+    padding: 1rem;
+}
 
+.row-cart-products{
+    min-height: 14rem;
+    margin: 1rem;
+    padding: 1rem;    
+    align-items: center; 
+    border-radius: 10px;
+    border: solid rgb(236, 215, 254) 1px;
+    box-shadow: 0 5px 10px rgb(236, 236, 236);
+}
 
+.row-cart-img-title{
+    align-items: center;
+}
 
+.cart-img{
+    max-width: 12rem;
+    max-height: 12rem;
+    padding: 1rem;
+}
 
+.title-cart-img{
+    padding: 1rem 2rem;
+}
 
+.col-cart-count{
+    align-items: center;
+}
 
-
-
-
-
-
-
-
+.cart-count{
+    min-width: 4rem;
+    min-height: 2rem;
+}
