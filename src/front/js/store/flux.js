@@ -27,9 +27,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					const authJson = await auth.json();
 					setStore({ authToken: authJson.token });
-					console.log(authJson)
 					localStorage.setItem("token", authJson.token);
-
 					const user = await getActions().getUser();
 					setStore({ user });
 
@@ -61,15 +59,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 
 					if (!response.ok) throw new Error("Error obteniendo usuario");
-
 					const userData = await response.json();
-					console.log(userData)
 					const userFavorite = userData.favorites.map(item => item.product_id)
 					const userCart = userData.cart.map(item => item.product_id)
-
 					setStore({ user: userData, favorites: userFavorite, cart: userCart});
 					return userData;
-
+					
 				} catch (error) {
 					console.log("Error obteniendo usuario:", error);
 					return null;
