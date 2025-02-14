@@ -20,7 +20,7 @@ export const ProductDetail = (product) => {
             <div className="img-card">
                 <img src={store.productdetail.image} className="card-img" alt="..."></img>
             </div>
-            <div className="body-text m-5 p-5">
+            <div className="body-text">
                 <h2 className="title">{store.productdetail.title}</h2>
                 <p>{store.productdetail.description}</p>
                 <strong className="price">{store.productdetail.price}€</strong>

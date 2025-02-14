@@ -158,16 +158,18 @@ h6 {
 .img-card {
    width: 100%;
    text-align: center;
-   padding: 50px 0;
+   padding: 80px 0;
 }
 
 .img-card img{
-    width: 20em;
-    height: 400px;
+    width: 18em;
+    height: 100%;
 }
 
 .body-text {
     text-align: start;
+    
+
 }
 
 .price {

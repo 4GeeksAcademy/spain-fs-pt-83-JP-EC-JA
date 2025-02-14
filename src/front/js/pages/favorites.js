@@ -24,8 +24,8 @@ export const Favorites = () => {
                                 <Link to="" className="btn btn-light" onClick={() => actions.removeFavorite(product.id)}>
                                     <i className="fa-solid fa-heart"></i>
                                 </Link>
-                                <Link to="#" className="btn btn-light btn-all">
-                                    <i className="bi bi-cart3"></i>
+                                <Link to="" className="btn btn-light btn-all">
+                                    <i className="bi bi-cart3" onClick={() => actions.addCart(product.id)}></i>
                                 </Link>
                             </div>
                         </div>
