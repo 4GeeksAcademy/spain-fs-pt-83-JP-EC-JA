@@ -12,14 +12,14 @@ export const Perfil = () => {
     }
 
     return (
-        <div className="perfil col-6 border border-1 rounded-4 pb-5 shadow">
+        <div className=" perfil text-center border border-1 rounded-4 pb-5 shadow">
             <h2 className="text-center py-4">Perfil del usuario</h2>
             <div className="container-fluid">
-                <div className="row">
-                    <div className="col">
-                        <img src={avatar} />
+                <div className="row row-cols-1">
+                    <div className="col-12 col-md-4">
+                        <img src={avatar} className="details-img" />
                     </div>
-                    <div className="col">
+                    <div className="col-12 col-md-8">
                     <table class="table table-borderless table-hover text-uppercase">
                         <tbody>
                             <tr>
