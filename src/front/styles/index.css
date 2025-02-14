@@ -10,6 +10,7 @@ html, body{
     max-height: 40rem;
 }
 
+
 nav span{
     background-color: #ecd7fe;
     border: 1px solid #b4b4b4;
@@ -187,6 +188,18 @@ h6 {
     font-size: 25px;
 }
 
+
+.perfil{
+    margin: 8rem auto;
+    width: 60%;
+    height: 40%;
+}   
+.perfil img{
+    width: 80%;
+    height: 200px;
+}
+
+
 .col-category{
     min-width: 17rem;
     padding: 1rem;
@@ -246,4 +259,10 @@ h6 {
 .cart-count{
     min-width: 4rem;
     min-height: 2rem;
+}
+
+@media (max-width: 360px){
+    .perfil{
+        width: 100%;
+    }
 }

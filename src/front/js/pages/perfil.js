@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-
+import avatar from "../../img/avatar.png"
 
 export const Perfil = () => {
 
@@ -12,15 +12,35 @@ export const Perfil = () => {
     }
 
     return (
-        <div className="pt-5 mt-5">
-            <h2 className="text-center">Perfil del usuario</h2>
-
-            <div className="card shadow">
-                <div className="card-body">
-                    <h5 className="card-title">Nombre de Usuario: {user.username}</h5>
-                    <p className="card-text">Nombre: {user.name}</p>
-                    <p className="card-text">Apellido: {user.lastname}</p>
-                    <p className="card-text">Correo: {user.email}</p>
+        <div className=" perfil text-center border border-1 rounded-4 pb-5 shadow">
+            <h2 className="text-center py-4">Perfil del usuario</h2>
+            <div className="container-fluid">
+                <div className="row row-cols-1">
+                    <div className="col-12 col-md-4">
+                        <img src={avatar} className="details-img" />
+                    </div>
+                    <div className="col-12 col-md-8">
+                    <table class="table table-borderless table-hover text-uppercase">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Usuario</th>
+                                <td>{user.username}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Nombre</th>
+                                <td>{user.name}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Apellido</th>
+                                <td colspan="2">{user.lastname}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Correo</th>
+                                <td colspan="2">{user.email}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
                 </div>
             </div>
 
