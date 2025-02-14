@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 export const AllCards = ({ image, title, category, price, rate, id }) => {
 
     const { store, actions } = useContext(Context);
-    console.log(store)
     return (
 
 
